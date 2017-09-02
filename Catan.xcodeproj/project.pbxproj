@@ -7,21 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5513AE301F4A06AF00D320D2 /* Collection+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513AE2F1F4A06AF00D320D2 /* Collection+Additions.swift */; };
+		5513AE331F4A06FB00D320D2 /* ClassicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513AE321F4A06FB00D320D2 /* ClassicGame.swift */; };
+		551960E91F533D9200EDAEF7 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551960E81F533CE400EDAEF7 /* UIColor+AppColors.swift */; };
+		551960EA1F533D9600EDAEF7 /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551960E71F533CB700EDAEF7 /* UIFont+AppFonts.swift */; };
+		551960EB1F533DA700EDAEF7 /* coresansar15.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E31F533C3600EDAEF7 /* coresansar15.otf */; };
+		551960EC1F533DA700EDAEF7 /* coresansar25.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E41F533C3600EDAEF7 /* coresansar25.otf */; };
+		551960ED1F533DA700EDAEF7 /* coresansar35.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E51F533C3600EDAEF7 /* coresansar35.otf */; };
+		55202E1F1F532EBB006291E4 /* ExtendedClassicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */; };
+		5535450F1F4FD97C00D21E65 /* PortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535450E1F4FD97C00D21E65 /* PortView.swift */; };
+		553545111F4FD99900D21E65 /* PortContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545101F4FD99900D21E65 /* PortContainerView.swift */; };
+		553545131F4FD9BF00D21E65 /* DiceCombinationTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545121F4FD9BF00D21E65 /* DiceCombinationTokenView.swift */; };
+		553545151F4FDDF700D21E65 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545141F4FDDF700D21E65 /* Port.swift */; };
+		553545171F4FDE1000D21E65 /* GameBoardPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545161F4FDE1000D21E65 /* GameBoardPiece.swift */; };
+		553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553BBB181F4E20FF00DFFA2A /* BoardView.swift */; };
+		5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555F2191F533F4700EC2CFE /* GameType.swift */; };
 		55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D371F493C0E0005B93F /* AppDelegate.swift */; };
-		55B01D3A1F493C0E0005B93F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D391F493C0E0005B93F /* ViewController.swift */; };
+		55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D391F493C0E0005B93F /* MainViewController.swift */; };
 		55B01D3D1F493C0E0005B93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B01D3B1F493C0E0005B93F /* Main.storyboard */; };
 		55B01D3F1F493C0E0005B93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B01D3E1F493C0E0005B93F /* Assets.xcassets */; };
 		55B01D421F493C0E0005B93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B01D401F493C0E0005B93F /* LaunchScreen.storyboard */; };
+		55B01D4B1F493C310005B93F /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D4A1F493C310005B93F /* Resource.swift */; };
+		55B01D4D1F493C850005B93F /* DiceCombination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D4C1F493C850005B93F /* DiceCombination.swift */; };
+		55B01D501F4940200005B93F /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D4F1F4940200005B93F /* GameBoard.swift */; };
+		55B01D521F4945D60005B93F /* GameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D511F4945D60005B93F /* GameDefinition.swift */; };
+		55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C11F4E2E2B0079372A /* HexagonView.swift */; };
+		55C003C41F4F78CD0079372A /* Optional+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C31F4F78CD0079372A /* Optional+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5513AE2F1F4A06AF00D320D2 /* Collection+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Additions.swift"; sourceTree = "<group>"; };
+		5513AE321F4A06FB00D320D2 /* ClassicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicGame.swift; sourceTree = "<group>"; };
+		551960E31F533C3600EDAEF7 /* coresansar15.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coresansar15.otf; sourceTree = "<group>"; };
+		551960E41F533C3600EDAEF7 /* coresansar25.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coresansar25.otf; sourceTree = "<group>"; };
+		551960E51F533C3600EDAEF7 /* coresansar35.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coresansar35.otf; sourceTree = "<group>"; };
+		551960E71F533CB700EDAEF7 /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
+		551960E81F533CE400EDAEF7 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedClassicGame.swift; sourceTree = "<group>"; };
+		5535450E1F4FD97C00D21E65 /* PortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortView.swift; sourceTree = "<group>"; };
+		553545101F4FD99900D21E65 /* PortContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortContainerView.swift; sourceTree = "<group>"; };
+		553545121F4FD9BF00D21E65 /* DiceCombinationTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceCombinationTokenView.swift; sourceTree = "<group>"; };
+		553545141F4FDDF700D21E65 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
+		553545161F4FDE1000D21E65 /* GameBoardPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardPiece.swift; sourceTree = "<group>"; };
+		553BBB181F4E20FF00DFFA2A /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		5555F2191F533F4700EC2CFE /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		55B01D341F493C0E0005B93F /* Catan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B01D371F493C0E0005B93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55B01D391F493C0E0005B93F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55B01D391F493C0E0005B93F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		55B01D3C1F493C0E0005B93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55B01D3E1F493C0E0005B93F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B01D411F493C0E0005B93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55B01D431F493C0E0005B93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B01D4A1F493C310005B93F /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		55B01D4C1F493C850005B93F /* DiceCombination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceCombination.swift; sourceTree = "<group>"; };
+		55B01D4F1F4940200005B93F /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		55B01D511F4945D60005B93F /* GameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDefinition.swift; sourceTree = "<group>"; };
+		55C003C11F4E2E2B0079372A /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		55C003C31F4F78CD0079372A /* Optional+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +77,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5513AE2E1F4A069E00D320D2 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				5513AE2F1F4A06AF00D320D2 /* Collection+Additions.swift */,
+				55C003C31F4F78CD0079372A /* Optional+Additions.swift */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		5513AE311F4A06F100D320D2 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				5513AE321F4A06FB00D320D2 /* ClassicGame.swift */,
+				55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		551960E01F5338CA00EDAEF7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55B01D391F493C0E0005B93F /* MainViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		551960E11F533C0800EDAEF7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				551960E21F533C1B00EDAEF7 /* Fonts */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		551960E21F533C1B00EDAEF7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				551960E31F533C3600EDAEF7 /* coresansar15.otf */,
+				551960E41F533C3600EDAEF7 /* coresansar25.otf */,
+				551960E51F533C3600EDAEF7 /* coresansar35.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		551960E61F533C9C00EDAEF7 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				551960E81F533CE400EDAEF7 /* UIColor+AppColors.swift */,
+				551960E71F533CB700EDAEF7 /* UIFont+AppFonts.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		55202E201F532EEF006291E4 /* Raw Models */ = {
+			isa = PBXGroup;
+			children = (
+				55B01D4C1F493C850005B93F /* DiceCombination.swift */,
+				553545141F4FDDF700D21E65 /* Port.swift */,
+				55B01D4A1F493C310005B93F /* Resource.swift */,
+			);
+			path = "Raw Models";
+			sourceTree = "<group>";
+		};
+		553BBB171F4E013100DFFA2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				553BBB181F4E20FF00DFFA2A /* BoardView.swift */,
+				553545121F4FD9BF00D21E65 /* DiceCombinationTokenView.swift */,
+				55C003C11F4E2E2B0079372A /* HexagonView.swift */,
+				553545101F4FD99900D21E65 /* PortContainerView.swift */,
+				5535450E1F4FD97C00D21E65 /* PortView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		55B01D2B1F493C0E0005B93F = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +171,32 @@
 		55B01D361F493C0E0005B93F /* Catan */ = {
 			isa = PBXGroup;
 			children = (
+				5513AE2E1F4A069E00D320D2 /* Additions */,
+				551960E61F533C9C00EDAEF7 /* Appearance */,
+				5513AE311F4A06F100D320D2 /* Games */,
+				55B01D4E1F4940130005B93F /* Models */,
+				551960E11F533C0800EDAEF7 /* Utilities */,
+				551960E01F5338CA00EDAEF7 /* View Controllers */,
+				553BBB171F4E013100DFFA2A /* Views */,
 				55B01D371F493C0E0005B93F /* AppDelegate.swift */,
-				55B01D391F493C0E0005B93F /* ViewController.swift */,
-				55B01D3B1F493C0E0005B93F /* Main.storyboard */,
 				55B01D3E1F493C0E0005B93F /* Assets.xcassets */,
-				55B01D401F493C0E0005B93F /* LaunchScreen.storyboard */,
 				55B01D431F493C0E0005B93F /* Info.plist */,
+				55B01D401F493C0E0005B93F /* LaunchScreen.storyboard */,
+				55B01D3B1F493C0E0005B93F /* Main.storyboard */,
 			);
 			path = Catan;
+			sourceTree = "<group>";
+		};
+		55B01D4E1F4940130005B93F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55202E201F532EEF006291E4 /* Raw Models */,
+				55B01D4F1F4940200005B93F /* GameBoard.swift */,
+				553545161F4FDE1000D21E65 /* GameBoardPiece.swift */,
+				55B01D511F4945D60005B93F /* GameDefinition.swift */,
+				5555F2191F533F4700EC2CFE /* GameType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +261,9 @@
 			files = (
 				55B01D421F493C0E0005B93F /* LaunchScreen.storyboard in Resources */,
 				55B01D3F1F493C0E0005B93F /* Assets.xcassets in Resources */,
+				551960ED1F533DA700EDAEF7 /* coresansar35.otf in Resources */,
+				551960EC1F533DA700EDAEF7 /* coresansar25.otf in Resources */,
+				551960EB1F533DA700EDAEF7 /* coresansar15.otf in Resources */,
 				55B01D3D1F493C0E0005B93F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +275,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B01D3A1F493C0E0005B93F /* ViewController.swift in Sources */,
+				5513AE331F4A06FB00D320D2 /* ClassicGame.swift in Sources */,
+				55202E1F1F532EBB006291E4 /* ExtendedClassicGame.swift in Sources */,
+				5535450F1F4FD97C00D21E65 /* PortView.swift in Sources */,
+				553545111F4FD99900D21E65 /* PortContainerView.swift in Sources */,
+				55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */,
+				551960E91F533D9200EDAEF7 /* UIColor+AppColors.swift in Sources */,
+				55C003C41F4F78CD0079372A /* Optional+Additions.swift in Sources */,
+				551960EA1F533D9600EDAEF7 /* UIFont+AppFonts.swift in Sources */,
+				55B01D4D1F493C850005B93F /* DiceCombination.swift in Sources */,
+				55B01D4B1F493C310005B93F /* Resource.swift in Sources */,
+				553545171F4FDE1000D21E65 /* GameBoardPiece.swift in Sources */,
+				5513AE301F4A06AF00D320D2 /* Collection+Additions.swift in Sources */,
+				55B01D501F4940200005B93F /* GameBoard.swift in Sources */,
+				5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */,
+				553545151F4FDDF700D21E65 /* Port.swift in Sources */,
+				55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */,
+				553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */,
 				55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */,
+				55B01D521F4945D60005B93F /* GameDefinition.swift in Sources */,
+				553545131F4FD9BF00D21E65 /* DiceCombinationTokenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +307,7 @@
 				55B01D3C1F493C0E0005B93F /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		55B01D401F493C0E0005B93F /* LaunchScreen.storyboard */ = {
@@ -159,6 +316,7 @@
 				55B01D411F493C0E0005B93F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -262,11 +420,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NC6PEUTA52;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Catan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-O0";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elsonbaty.Catan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -276,10 +438,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NC6PEUTA52;
 				INFOPLIST_FILE = Catan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-O0";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elsonbaty.Catan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -302,6 +467,7 @@
 				55B01D481F493C0E0005B93F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

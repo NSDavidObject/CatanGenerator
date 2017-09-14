@@ -40,7 +40,7 @@ class SoundPlayer {
     private init() {}
     
     private var players = [SoundType: AVAudioPlayer]()
-    private func playSound(of type: SoundType) {
+    private func playSound(of type: SoundType, withVolume volume: Float) {
         guard !type.isNone else { return }
         
         var player = players[type]
@@ -48,10 +48,11 @@ class SoundPlayer {
             player = try? AVAudioPlayer(contentsOf: type.soundURL!)
             players[type] = player
         }
+        player?.volume = volume
         player?.play()
     }
     
-    static func playSound(of type: SoundType) {
-        SoundPlayer.shared.playSound(of: type)
+    static func playSound(of type: SoundType, withVolume volume: Float = 1.0) {
+        SoundPlayer.shared.playSound(of: type, withVolume: volume)
     }
 }

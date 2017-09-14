@@ -10,16 +10,13 @@ import UIKit
 
 class Button: UIButton {
     
+    var clickVolume: Float = 0.1
     var clickSound: SoundType = .none
     var proportionalCornerRadius: ProportionalCornerRadius?
     convenience init(proportionalCornerRadius: ProportionalCornerRadius) {
         self.init(frame: CGRect.zero)
         self.proportionalCornerRadius = proportionalCornerRadius
     }
-    
-    fileprivate var initialForce: CGFloat?
-    fileprivate var initialTouchTimeStamp: TimeInterval?
-    fileprivate var lastForceTouchPercentage: CGFloat?
     
     override var isEnabled: Bool {
         didSet { self.alpha = isEnabled ? 1 : 0.35 }
@@ -53,6 +50,6 @@ class Button: UIButton {
     }
     
     @objc private func shouldPlaySoundIfAvailable() {
-        SoundPlayer.playSound(of: clickSound)
+        SoundPlayer.playSound(of: clickSound, withVolume: clickVolume)
     }
 }

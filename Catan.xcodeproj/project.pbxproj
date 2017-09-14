@@ -15,6 +15,12 @@
 		551960EC1F533DA700EDAEF7 /* coresansar25.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E41F533C3600EDAEF7 /* coresansar25.otf */; };
 		551960ED1F533DA700EDAEF7 /* coresansar35.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E51F533C3600EDAEF7 /* coresansar35.otf */; };
 		55202E1F1F532EBB006291E4 /* ExtendedClassicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */; };
+		5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521E11E1F6A2772006A6644 /* TransformableButton.swift */; };
+		5521E1211F6A27B2006A6644 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521E1201F6A27B2006A6644 /* Button.swift */; };
+		5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */; };
+		5521E1261F6A289F006A6644 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521E1251F6A289F006A6644 /* SoundPlayer.swift */; };
+		5521E12F1F6A2A81006A6644 /* Click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5521E12C1F6A2947006A6644 /* Click.wav */; };
+		5521E1301F6A2A81006A6644 /* Toggle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5521E12D1F6A2947006A6644 /* Toggle.wav */; };
 		5535450F1F4FD97C00D21E65 /* PortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535450E1F4FD97C00D21E65 /* PortView.swift */; };
 		553545111F4FD99900D21E65 /* PortContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545101F4FD99900D21E65 /* PortContainerView.swift */; };
 		553545131F4FD9BF00D21E65 /* DiceCombinationTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545121F4FD9BF00D21E65 /* DiceCombinationTokenView.swift */; };
@@ -44,6 +50,12 @@
 		551960E71F533CB700EDAEF7 /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		551960E81F533CE400EDAEF7 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedClassicGame.swift; sourceTree = "<group>"; };
+		5521E11E1F6A2772006A6644 /* TransformableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformableButton.swift; sourceTree = "<group>"; };
+		5521E1201F6A27B2006A6644 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProportionalCornerRadius.swift; sourceTree = "<group>"; };
+		5521E1251F6A289F006A6644 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		5521E12C1F6A2947006A6644 /* Click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Click.wav; sourceTree = "<group>"; };
+		5521E12D1F6A2947006A6644 /* Toggle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Toggle.wav; sourceTree = "<group>"; };
 		5535450E1F4FD97C00D21E65 /* PortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortView.swift; sourceTree = "<group>"; };
 		553545101F4FD99900D21E65 /* PortContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortContainerView.swift; sourceTree = "<group>"; };
 		553545121F4FD9BF00D21E65 /* DiceCombinationTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceCombinationTokenView.swift; sourceTree = "<group>"; };
@@ -106,6 +118,7 @@
 		551960E11F533C0800EDAEF7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5521E1291F6A2930006A6644 /* Sounds */,
 				551960E21F533C1B00EDAEF7 /* Fonts */,
 			);
 			path = Utilities;
@@ -140,6 +153,32 @@
 			path = "Raw Models";
 			sourceTree = "<group>";
 		};
+		5521E1241F6A2893006A6644 /* Sound Player */ = {
+			isa = PBXGroup;
+			children = (
+				5521E1251F6A289F006A6644 /* SoundPlayer.swift */,
+			);
+			path = "Sound Player";
+			sourceTree = "<group>";
+		};
+		5521E1291F6A2930006A6644 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5521E12C1F6A2947006A6644 /* Click.wav */,
+				5521E12D1F6A2947006A6644 /* Toggle.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		5521E12E1F6A2976006A6644 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5521E1241F6A2893006A6644 /* Sound Player */,
+				5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		553BBB171F4E013100DFFA2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +187,8 @@
 				55C003C11F4E2E2B0079372A /* HexagonView.swift */,
 				553545101F4FD99900D21E65 /* PortContainerView.swift */,
 				5535450E1F4FD97C00D21E65 /* PortView.swift */,
+				5521E11E1F6A2772006A6644 /* TransformableButton.swift */,
+				5521E1201F6A27B2006A6644 /* Button.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,14 +212,15 @@
 		55B01D361F493C0E0005B93F /* Catan */ = {
 			isa = PBXGroup;
 			children = (
+				55B01D371F493C0E0005B93F /* AppDelegate.swift */,
 				5513AE2E1F4A069E00D320D2 /* Additions */,
 				551960E61F533C9C00EDAEF7 /* Appearance */,
+				5521E12E1F6A2976006A6644 /* Classes */,
 				5513AE311F4A06F100D320D2 /* Games */,
 				55B01D4E1F4940130005B93F /* Models */,
 				551960E11F533C0800EDAEF7 /* Utilities */,
 				551960E01F5338CA00EDAEF7 /* View Controllers */,
 				553BBB171F4E013100DFFA2A /* Views */,
-				55B01D371F493C0E0005B93F /* AppDelegate.swift */,
 				55B01D3E1F493C0E0005B93F /* Assets.xcassets */,
 				55B01D431F493C0E0005B93F /* Info.plist */,
 				55B01D401F493C0E0005B93F /* LaunchScreen.storyboard */,
@@ -259,10 +301,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5521E1301F6A2A81006A6644 /* Toggle.wav in Resources */,
 				55B01D421F493C0E0005B93F /* LaunchScreen.storyboard in Resources */,
 				55B01D3F1F493C0E0005B93F /* Assets.xcassets in Resources */,
 				551960ED1F533DA700EDAEF7 /* coresansar35.otf in Resources */,
 				551960EC1F533DA700EDAEF7 /* coresansar25.otf in Resources */,
+				5521E12F1F6A2A81006A6644 /* Click.wav in Resources */,
 				551960EB1F533DA700EDAEF7 /* coresansar15.otf in Resources */,
 				55B01D3D1F493C0E0005B93F /* Main.storyboard in Resources */,
 			);
@@ -285,16 +329,20 @@
 				551960EA1F533D9600EDAEF7 /* UIFont+AppFonts.swift in Sources */,
 				55B01D4D1F493C850005B93F /* DiceCombination.swift in Sources */,
 				55B01D4B1F493C310005B93F /* Resource.swift in Sources */,
+				5521E1261F6A289F006A6644 /* SoundPlayer.swift in Sources */,
 				553545171F4FDE1000D21E65 /* GameBoardPiece.swift in Sources */,
 				5513AE301F4A06AF00D320D2 /* Collection+Additions.swift in Sources */,
 				55B01D501F4940200005B93F /* GameBoard.swift in Sources */,
 				5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */,
 				553545151F4FDDF700D21E65 /* Port.swift in Sources */,
+				5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */,
+				5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */,
 				55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */,
 				553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */,
 				55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */,
 				55B01D521F4945D60005B93F /* GameDefinition.swift in Sources */,
 				553545131F4FD9BF00D21E65 /* DiceCombinationTokenView.swift in Sources */,
+				5521E1211F6A27B2006A6644 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

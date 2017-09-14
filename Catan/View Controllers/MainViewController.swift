@@ -14,8 +14,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var boardView: BoardView!
-    @IBOutlet weak var generateButton: UIButton!
-    @IBOutlet weak var gameTypeToggleButton: UIButton!
+    @IBOutlet weak var generateButton: TransformableButton!
+    @IBOutlet weak var gameTypeToggleButton: TransformableButton!
     
     var gameType: GameType = .classic {
         didSet { didUpdateCurrentGameType() }
@@ -33,10 +33,13 @@ class MainViewController: UIViewController {
         generateButton.layer.borderWidth = 1.0
         generateButton.layer.borderColor = UIColor.appColorMainColor.cgColor
         
+        generateButton.clickSound = .click
+        generateButton.proportionalCornerRadius = .circular
         generateButton.setTitle("Generate", for: .normal)
         generateButton.setTitleColor(UIColor.appColorMainViewControllerGenerateButton, for: .normal)
         generateButton.titleLabel?.font = UIFont.appFontMainViewControllerGenerateButton
         
+        gameTypeToggleButton.clickSound = .toggle
         gameTypeToggleButton.titleLabel?.font = UIFont.appFontMainViewControllerGameTypeTitleLabel
         gameTypeToggleButton.setTitleColor(UIColor.appColorMainViewControllerGameTypeTitleLabel, for: .normal)
         
@@ -50,12 +53,6 @@ class MainViewController: UIViewController {
         if let randomSubview = contentView.subviews.first, randomSubview.alpha == 0.0 {
             updateSubviewsAlphaWithAnimation(to: 1.0, animated: true)
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        generateButton.layer.cornerRadius = generateButton.bounds.height / 2.0
     }
     
     @IBAction func generateButtonClicked(_ sender: Any) {

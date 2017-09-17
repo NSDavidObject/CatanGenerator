@@ -38,6 +38,8 @@
 		55B01D501F4940200005B93F /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D4F1F4940200005B93F /* GameBoard.swift */; };
 		55B01D521F4945D60005B93F /* GameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D511F4945D60005B93F /* GameDefinition.swift */; };
 		55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */; };
+		55B774091F6E0964001F58BC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B774071F6E091A001F58BC /* Crashlytics.framework */; };
+		55B7740A1F6E0964001F58BC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B774081F6E091B001F58BC /* Fabric.framework */; };
 		55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C11F4E2E2B0079372A /* HexagonView.swift */; };
 		55C003C41F4F78CD0079372A /* Optional+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C31F4F78CD0079372A /* Optional+Additions.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		55B01D4F1F4940200005B93F /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		55B01D511F4945D60005B93F /* GameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDefinition.swift; sourceTree = "<group>"; };
 		55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
+		55B774071F6E091A001F58BC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		55B774081F6E091B001F58BC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		55C003C11F4E2E2B0079372A /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		55C003C31F4F78CD0079372A /* Optional+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B774091F6E0964001F58BC /* Crashlytics.framework in Frameworks */,
+				55B7740A1F6E0964001F58BC /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +230,8 @@
 				551960E11F533C0800EDAEF7 /* Utilities */,
 				551960E01F5338CA00EDAEF7 /* View Controllers */,
 				553BBB171F4E013100DFFA2A /* Views */,
+				55B774071F6E091A001F58BC /* Crashlytics.framework */,
+				55B774081F6E091B001F58BC /* Fabric.framework */,
 				55B01D3E1F493C0E0005B93F /* Assets.xcassets */,
 				55B01D431F493C0E0005B93F /* Info.plist */,
 				55B01D401F493C0E0005B93F /* LaunchScreen.storyboard */,
@@ -254,6 +262,7 @@
 				55B01D301F493C0E0005B93F /* Sources */,
 				55B01D311F493C0E0005B93F /* Frameworks */,
 				55B01D321F493C0E0005B93F /* Resources */,
+				55B774061F6E08EF001F58BC /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -317,6 +326,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55B774061F6E08EF001F58BC /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run cfce56bcef671fe1ecf1975512466996d9597e2e 4e858422dcbdabba1803bfb2e8fe8231726aba99b42e262149684d7b8418758c";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55B01D301F493C0E0005B93F /* Sources */ = {
@@ -487,6 +513,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NC6PEUTA52;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Catan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -505,6 +535,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NC6PEUTA52;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Catan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

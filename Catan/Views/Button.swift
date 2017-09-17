@@ -12,6 +12,7 @@ class Button: UIButton {
     
     var clickVolume: Float = 0.1
     var clickSound: SoundType = .none
+    var feedbackType: FeedbackType? = .none
     var proportionalCornerRadius: ProportionalCornerRadius?
     convenience init(proportionalCornerRadius: ProportionalCornerRadius) {
         self.init(frame: CGRect.zero)
@@ -34,7 +35,7 @@ class Button: UIButton {
     }
     
     func commonInitalization() {
-        addTarget(self, action: #selector(shouldPlaySoundIfAvailable), for: .touchUpInside)
+        addTarget(self, action: #selector(didTouchUpInside), for: .touchUpInside)
     }
     
     // MARK: Layout
@@ -49,7 +50,16 @@ class Button: UIButton {
         }
     }
     
-    @objc private func shouldPlaySoundIfAvailable() {
-        SoundPlayer.playSound(of: clickSound, withVolume: clickVolume)
+    @objc private func didTouchUpInside() {
+        playSoundIfNeeded()
+        generateFeedbackIfNeeded()
+    }
+    
+    private func generateFeedbackIfNeeded() {
+        feedbackType.apply({ FeedbackGenerator.generate(of: $0) }) 
+    }
+    
+    private func playSoundIfNeeded() {
+        SoundPlayer.playFrequentSound(of: clickSound, withVolume: clickVolume)
     }
 }

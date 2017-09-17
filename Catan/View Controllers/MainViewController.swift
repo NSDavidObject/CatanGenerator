@@ -34,12 +34,14 @@ class MainViewController: UIViewController {
         generateButton.layer.borderColor = UIColor.appColorMainColor.cgColor
         
         generateButton.clickSound = .click
+        generateButton.feedbackType = .selection
         generateButton.proportionalCornerRadius = .circular
         generateButton.setTitle("Generate", for: .normal)
         generateButton.setTitleColor(UIColor.appColorMainViewControllerGenerateButton, for: .normal)
         generateButton.titleLabel?.font = UIFont.appFontMainViewControllerGenerateButton
         
         gameTypeToggleButton.clickSound = .toggle
+        gameTypeToggleButton.feedbackType = .success
         gameTypeToggleButton.titleLabel?.font = UIFont.appFontMainViewControllerGameTypeTitleLabel
         gameTypeToggleButton.setTitleColor(UIColor.appColorMainViewControllerGameTypeTitleLabel, for: .normal)
         

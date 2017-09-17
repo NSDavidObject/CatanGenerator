@@ -37,6 +37,7 @@
 		55B01D4D1F493C850005B93F /* DiceCombination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D4C1F493C850005B93F /* DiceCombination.swift */; };
 		55B01D501F4940200005B93F /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D4F1F4940200005B93F /* GameBoard.swift */; };
 		55B01D521F4945D60005B93F /* GameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D511F4945D60005B93F /* GameDefinition.swift */; };
+		55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */; };
 		55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C11F4E2E2B0079372A /* HexagonView.swift */; };
 		55C003C41F4F78CD0079372A /* Optional+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C31F4F78CD0079372A /* Optional+Additions.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		55B01D4C1F493C850005B93F /* DiceCombination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceCombination.swift; sourceTree = "<group>"; };
 		55B01D4F1F4940200005B93F /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		55B01D511F4945D60005B93F /* GameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDefinition.swift; sourceTree = "<group>"; };
+		55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		55C003C11F4E2E2B0079372A /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		55C003C31F4F78CD0079372A /* Optional+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 			children = (
 				5521E1241F6A2893006A6644 /* Sound Player */,
 				5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */,
+				55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */,
 				553545151F4FDDF700D21E65 /* Port.swift in Sources */,
 				5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */,
+				55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */,
 				5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */,
 				55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */,
 				553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */,
@@ -488,7 +492,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-O0";
-				PRODUCT_BUNDLE_IDENTIFIER = com.elsonbaty.Catan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elsonbaty.catanous;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -505,7 +509,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-O0";
-				PRODUCT_BUNDLE_IDENTIFIER = com.elsonbaty.Catan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elsonbaty.catanous;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;

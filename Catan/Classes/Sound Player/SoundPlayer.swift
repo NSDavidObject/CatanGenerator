@@ -34,25 +34,47 @@ enum SoundType {
     }
 }
 
-class SoundPlayer {
+class SoundPlayer: NSObject {
     
     private static let shared = SoundPlayer()
-    private init() {}
+    private override init() {}
     
     private var players = [SoundType: AVAudioPlayer]()
-    private func playSound(of type: SoundType, withVolume volume: Float) {
+    private var nonreusablePlayers = [AVAudioPlayer]()
+    private func playSound(of type: SoundType, withVolume volume: Float, reusingPlayers: Bool = true) {
         guard !type.isNone else { return }
         
-        var player = players[type]
+        var player: AVAudioPlayer? = reusingPlayers ? players[type] : nil
         if (player == nil) {
             player = try? AVAudioPlayer(contentsOf: type.soundURL!)
-            players[type] = player
+            if reusingPlayers {
+                players[type] = player
+            } else {
+                player.apply({
+                    player?.delegate = self
+                    nonreusablePlayers.append($0)
+                })
+            }
         }
+        
         player?.volume = volume
+        player?.prepareToPlay()
         player?.play()
+    }
+    
+    static func playFrequentSound(of type: SoundType, withVolume volume: Float = 1.0) {
+        SoundPlayer.shared.playSound(of: type, withVolume: volume, reusingPlayers: false)
     }
     
     static func playSound(of type: SoundType, withVolume volume: Float = 1.0) {
         SoundPlayer.shared.playSound(of: type, withVolume: volume)
+    }
+}
+
+extension SoundPlayer: AVAudioPlayerDelegate {
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        // delete nonreusable player
+        nonreusablePlayers.index(of: player).apply({ nonreusablePlayers.remove(at: $0) })
     }
 }

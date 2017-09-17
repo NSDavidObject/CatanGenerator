@@ -16,7 +16,7 @@ class TransformableButton: Button {
             if isHighlighted {
                 alpha = 0.9
                 if (shouldTransformOnClick) {
-                    transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                    transform = CGAffineTransform(scaleX: 0.99, y: 0.99)
                 }
             } else {
                 alpha = 1.0

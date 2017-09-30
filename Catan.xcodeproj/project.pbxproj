@@ -37,6 +37,10 @@
 		55597EBE1F800CFA0062C4C6 /* DoubleArrayPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */; };
 		55597EC01F80139C0062C4C6 /* Int+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EBF1F80139C0062C4C6 /* Int+Additions.swift */; };
 		55597EC21F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC11F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift */; };
+		55597EC41F803E140062C4C6 /* DefaultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC31F803E140062C4C6 /* DefaultsItem.swift */; };
+		55597EC61F803E640062C4C6 /* UserDefaults+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC51F803E640062C4C6 /* UserDefaults+Additions.swift */; };
+		55597EC81F803EE30062C4C6 /* DefaultsGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */; };
+		55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */; };
 		55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D371F493C0E0005B93F /* AppDelegate.swift */; };
 		55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D391F493C0E0005B93F /* MainViewController.swift */; };
 		55B01D3D1F493C0E0005B93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B01D3B1F493C0E0005B93F /* Main.storyboard */; };
@@ -95,6 +99,10 @@
 		55597EBC1F800CB90062C4C6 /* DoubleArrayPositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleArrayPositionTests.swift; sourceTree = "<group>"; };
 		55597EBF1F80139C0062C4C6 /* Int+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Additions.swift"; sourceTree = "<group>"; };
 		55597EC11F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardResourcesDistrubutionFairnessEvaluator.swift; sourceTree = "<group>"; };
+		55597EC31F803E140062C4C6 /* DefaultsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsItem.swift; sourceTree = "<group>"; };
+		55597EC51F803E640062C4C6 /* UserDefaults+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Additions.swift"; sourceTree = "<group>"; };
+		55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsGameType.swift; sourceTree = "<group>"; };
+		55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentlyUsedGameTypePersistedSetting.swift; sourceTree = "<group>"; };
 		55B01D341F493C0E0005B93F /* Catan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B01D371F493C0E0005B93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B01D391F493C0E0005B93F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 				5513AE2F1F4A06AF00D320D2 /* Collection+Additions.swift */,
 				55C003C31F4F78CD0079372A /* Optional+Additions.swift */,
 				55597EBF1F80139C0062C4C6 /* Int+Additions.swift */,
+				55597EC51F803E640062C4C6 /* UserDefaults+Additions.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -218,11 +227,12 @@
 		5521E12E1F6A2976006A6644 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				55597EC91F803EE70062C4C6 /* Persisted Settings */,
+				55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */,
 				55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */,
+				55597EAA1F8004350062C4C6 /* GameBoardFactory.swift */,
 				55597EA71F7FFA9A0062C4C6 /* GameBoardFairnessEvaluator */,
 				5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */,
-				55597EAA1F8004350062C4C6 /* GameBoardFactory.swift */,
-				55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */,
 				5521E1241F6A2893006A6644 /* Sound Player */,
 			);
 			path = Classes;
@@ -260,6 +270,16 @@
 				55597EB61F800C9A0062C4C6 /* Info.plist */,
 			);
 			path = CatanTests;
+			sourceTree = "<group>";
+		};
+		55597EC91F803EE70062C4C6 /* Persisted Settings */ = {
+			isa = PBXGroup;
+			children = (
+				55597EC31F803E140062C4C6 /* DefaultsItem.swift */,
+				55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */,
+				55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */,
+			);
+			path = "Persisted Settings";
 			sourceTree = "<group>";
 		};
 		55B01D2B1F493C0E0005B93F = {
@@ -460,6 +480,7 @@
 				55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */,
 				551960E91F533D9200EDAEF7 /* UIColor+AppColors.swift in Sources */,
 				55C003C41F4F78CD0079372A /* Optional+Additions.swift in Sources */,
+				55597EC61F803E640062C4C6 /* UserDefaults+Additions.swift in Sources */,
 				551960EA1F533D9600EDAEF7 /* UIFont+AppFonts.swift in Sources */,
 				55B01D4D1F493C850005B93F /* DiceCombination.swift in Sources */,
 				55B01D4B1F493C310005B93F /* Resource.swift in Sources */,
@@ -471,12 +492,15 @@
 				553545151F4FDDF700D21E65 /* Port.swift in Sources */,
 				55597EA91F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift in Sources */,
 				5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */,
+				55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */,
 				55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */,
 				55597EA61F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift in Sources */,
+				55597EC41F803E140062C4C6 /* DefaultsItem.swift in Sources */,
 				5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */,
 				55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */,
 				553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */,
 				55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */,
+				55597EC81F803EE30062C4C6 /* DefaultsGameType.swift in Sources */,
 				55B01D521F4945D60005B93F /* GameDefinition.swift in Sources */,
 				553545131F4FD9BF00D21E65 /* DiceCombinationTokenView.swift in Sources */,
 				5521E1211F6A27B2006A6644 /* Button.swift in Sources */,

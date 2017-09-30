@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var generateButton: TransformableButton!
     @IBOutlet weak var gameTypeToggleButton: TransformableButton!
     
-    var gameType: GameType = .classic {
+    var gameType: GameType = MostRecentlyUsedGameTypePersistedSetting.value {
         didSet { didUpdateCurrentGameType() }
     }
     
@@ -78,6 +78,7 @@ class MainViewController: UIViewController {
     
     func didUpdateCurrentGameType() {
         generateGameBoard()
+        MostRecentlyUsedGameTypePersistedSetting.set(value: gameType)
         
         UIView.performWithoutAnimation { [weak self] in
             self?.gameTypeToggleButton.setTitle(gameType.name, for: .normal)

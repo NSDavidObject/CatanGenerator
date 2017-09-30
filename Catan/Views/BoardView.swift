@@ -10,17 +10,38 @@ import UIKit
 
 class BoardView: UIView {
     
-    var gameBoard: GameBoard? = nil
+    private var gameBoard: GameBoard? = nil
+    private var gameBoardViews: [UIView] = []
+    
     func setup(with gameBoard: GameBoard) {
         self.gameBoard = gameBoard
         buildBoard()
     }
     
-    func buildBoard() {
+    func toggleProbabilityTokens(on: Bool, animated: Bool) {
+        let hexagonsViews: [HexagonView] = gameBoardViews.flatMap({ $0 as? HexagonView })
+        
+        func toggleAlphaOfHexagonViews() {
+            hexagonsViews.forEach({ hexagonView in
+                hexagonView.diceCombinationTokenView.alpha = on ? 1.0 : 0.0
+            })
+        }
+        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: {
+                toggleAlphaOfHexagonViews()
+            })
+        } else {
+            toggleAlphaOfHexagonViews()
+        }
+    }
+    
+    private func buildBoard() {
         guard let gameBoard = gameBoard else { return }
         
         // Reset old views
-        subviews.forEach({ $0.removeFromSuperview() })
+        gameBoardViews.forEach({ $0.removeFromSuperview() })
+        gameBoardViews.removeAll()
         
         let numberOfSlotsPerRow = gameBoard.maxNumberOfHexagonsInRow
         let numberOfSlotsToAccountForInRow = numberOfSlotsPerRow - 1
@@ -40,13 +61,14 @@ class BoardView: UIView {
                 let view: UIView = self.view(forPiece: piece)
                 view.frame = CGRect(origin: origin, size: hexagonSize)
                 addSubview(view)
+                gameBoardViews.append(view)
                 originX += hexagonWidth + 0.5
             }
             originY += hexagonHeight * 0.75 + 0.5
         }
     }
     
-    func view(forPiece piece: GameBoardPiece) -> UIView {
+    private func view(forPiece piece: GameBoardPiece) -> UIView {
         switch piece {
         case .hexagon(let hexagon):
             let hexagonView: HexagonView = HexagonView()

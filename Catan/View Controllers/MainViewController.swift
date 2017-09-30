@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
         didSet { didUpdateCurrentGameType() }
     }
     
+    fileprivate var areProbabilityTokensEnabled: Bool = true
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -29,6 +31,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         boardView.backgroundColor = .clear
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGameBoardView))
+        boardView.addGestureRecognizer(gestureRecognizer)
         
         generateButton.layer.borderWidth = 1.0
         generateButton.layer.borderColor = UIColor.appColorMainColor.cgColor
@@ -63,6 +68,11 @@ class MainViewController: UIViewController {
     
     @IBAction func gameTypeToggleButtonClicked(_ sender: Any) {
         gameType = gameType.nextGameType
+    }
+    
+    @objc func didTapGameBoardView() {
+        areProbabilityTokensEnabled = !areProbabilityTokensEnabled
+        boardView.toggleProbabilityTokens(on: areProbabilityTokensEnabled, animated: true)
     }
     
     func didUpdateCurrentGameType() {

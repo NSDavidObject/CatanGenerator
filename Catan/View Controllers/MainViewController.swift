@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func generateButtonClicked(_ sender: Any) {
-        generateBoard()
+        generateGameBoard()
     }
     
     @IBAction func gameTypeToggleButtonClicked(_ sender: Any) {
@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
     }
     
     func didUpdateCurrentGameType() {
-        generateBoard()
+        generateGameBoard()
         
         UIView.performWithoutAnimation { [weak self] in
             self?.gameTypeToggleButton.setTitle(gameType.name, for: .normal)
@@ -74,9 +74,9 @@ class MainViewController: UIViewController {
         }
     }
     
-    func generateBoard() {
-        let board = gameType.generateBoard()
-        boardView.setup(with: board)
+    func generateGameBoard() {
+        let gameBoard = GameBoardFactory.fairlyDistributedGameBoard(ofType: gameType)
+        boardView.setup(with: gameBoard)
     }
     
     func updateSubviewsAlpha(to alpha: CGFloat) {

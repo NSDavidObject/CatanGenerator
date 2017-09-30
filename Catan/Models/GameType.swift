@@ -29,9 +29,5 @@ enum GameType: Int {
     var nextGameType: GameType {
         return GameType(rawValue: rawValue + 1) ?? (GameType(rawValue: 0) ?? self)
     }
-    
-    func generateBoard() -> GameBoard  {
-        return self.definition.generatedBoard()
-    }
 }
 

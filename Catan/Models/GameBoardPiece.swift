@@ -20,6 +20,13 @@ enum GameBoardPiece {
             default: return nil
             }
         }
+        
+        var resource: Resource? {
+            switch self {
+            case .resource(let resource, _): return resource
+            default: return nil
+            }
+        }
     }
     
     var hexagon: Hexagon? {

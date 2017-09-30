@@ -28,6 +28,15 @@
 		553545171F4FDE1000D21E65 /* GameBoardPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545161F4FDE1000D21E65 /* GameBoardPiece.swift */; };
 		553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553BBB181F4E20FF00DFFA2A /* BoardView.swift */; };
 		5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555F2191F533F4700EC2CFE /* GameType.swift */; };
+		55597EA61F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EA51F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift */; };
+		55597EA91F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EA81F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift */; };
+		55597EAB1F8004350062C4C6 /* GameBoardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EAA1F8004350062C4C6 /* GameBoardFactory.swift */; };
+		55597EAD1F800C730062C4C6 /* DoubleArrayPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */; };
+		55597EB51F800C9A0062C4C6 /* CatanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EB41F800C9A0062C4C6 /* CatanTests.swift */; };
+		55597EBD1F800CB90062C4C6 /* DoubleArrayPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EBC1F800CB90062C4C6 /* DoubleArrayPositionTests.swift */; };
+		55597EBE1F800CFA0062C4C6 /* DoubleArrayPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */; };
+		55597EC01F80139C0062C4C6 /* Int+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EBF1F80139C0062C4C6 /* Int+Additions.swift */; };
+		55597EC21F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC11F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift */; };
 		55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D371F493C0E0005B93F /* AppDelegate.swift */; };
 		55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D391F493C0E0005B93F /* MainViewController.swift */; };
 		55B01D3D1F493C0E0005B93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B01D3B1F493C0E0005B93F /* Main.storyboard */; };
@@ -43,6 +52,16 @@
 		55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C11F4E2E2B0079372A /* HexagonView.swift */; };
 		55C003C41F4F78CD0079372A /* Optional+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C31F4F78CD0079372A /* Optional+Additions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55597EB71F800C9A0062C4C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55B01D2C1F493C0E0005B93F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55B01D331F493C0E0005B93F;
+			remoteInfo = Catan;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5513AE2F1F4A06AF00D320D2 /* Collection+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Additions.swift"; sourceTree = "<group>"; };
@@ -66,6 +85,16 @@
 		553545161F4FDE1000D21E65 /* GameBoardPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardPiece.swift; sourceTree = "<group>"; };
 		553BBB181F4E20FF00DFFA2A /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		5555F2191F533F4700EC2CFE /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
+		55597EA51F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameBoardFairnessEvaluator.swift; path = Catan/Classes/GameBoardFairnessEvaluator/GameBoardFairnessEvaluator.swift; sourceTree = SOURCE_ROOT; };
+		55597EA81F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardProbabilityDistributionFairnessEvaluator.swift; sourceTree = "<group>"; };
+		55597EAA1F8004350062C4C6 /* GameBoardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardFactory.swift; sourceTree = "<group>"; };
+		55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleArrayPosition.swift; sourceTree = "<group>"; };
+		55597EB21F800C9A0062C4C6 /* CatanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55597EB41F800C9A0062C4C6 /* CatanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatanTests.swift; sourceTree = "<group>"; };
+		55597EB61F800C9A0062C4C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55597EBC1F800CB90062C4C6 /* DoubleArrayPositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleArrayPositionTests.swift; sourceTree = "<group>"; };
+		55597EBF1F80139C0062C4C6 /* Int+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Additions.swift"; sourceTree = "<group>"; };
+		55597EC11F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardResourcesDistrubutionFairnessEvaluator.swift; sourceTree = "<group>"; };
 		55B01D341F493C0E0005B93F /* Catan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B01D371F493C0E0005B93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B01D391F493C0E0005B93F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +114,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		55597EAF1F800C9A0062C4C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55B01D311F493C0E0005B93F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +138,7 @@
 			children = (
 				5513AE2F1F4A06AF00D320D2 /* Collection+Additions.swift */,
 				55C003C31F4F78CD0079372A /* Optional+Additions.swift */,
+				55597EBF1F80139C0062C4C6 /* Int+Additions.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -181,9 +218,12 @@
 		5521E12E1F6A2976006A6644 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5521E1241F6A2893006A6644 /* Sound Player */,
-				5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */,
 				55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */,
+				55597EA71F7FFA9A0062C4C6 /* GameBoardFairnessEvaluator */,
+				5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */,
+				55597EAA1F8004350062C4C6 /* GameBoardFactory.swift */,
+				55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */,
+				5521E1241F6A2893006A6644 /* Sound Player */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -202,10 +242,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		55597EA71F7FFA9A0062C4C6 /* GameBoardFairnessEvaluator */ = {
+			isa = PBXGroup;
+			children = (
+				55597EA51F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift */,
+				55597EA81F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift */,
+				55597EC11F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift */,
+			);
+			path = GameBoardFairnessEvaluator;
+			sourceTree = "<group>";
+		};
+		55597EB31F800C9A0062C4C6 /* CatanTests */ = {
+			isa = PBXGroup;
+			children = (
+				55597EB41F800C9A0062C4C6 /* CatanTests.swift */,
+				55597EBC1F800CB90062C4C6 /* DoubleArrayPositionTests.swift */,
+				55597EB61F800C9A0062C4C6 /* Info.plist */,
+			);
+			path = CatanTests;
+			sourceTree = "<group>";
+		};
 		55B01D2B1F493C0E0005B93F = {
 			isa = PBXGroup;
 			children = (
 				55B01D361F493C0E0005B93F /* Catan */,
+				55597EB31F800C9A0062C4C6 /* CatanTests */,
 				55B01D351F493C0E0005B93F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -214,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				55B01D341F493C0E0005B93F /* Catan.app */,
+				55597EB21F800C9A0062C4C6 /* CatanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,6 +317,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		55597EB11F800C9A0062C4C6 /* CatanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55597EB91F800C9A0062C4C6 /* Build configuration list for PBXNativeTarget "CatanTests" */;
+			buildPhases = (
+				55597EAE1F800C9A0062C4C6 /* Sources */,
+				55597EAF1F800C9A0062C4C6 /* Frameworks */,
+				55597EB01F800C9A0062C4C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55597EB81F800C9A0062C4C6 /* PBXTargetDependency */,
+			);
+			name = CatanTests;
+			productName = CatanTests;
+			productReference = 55597EB21F800C9A0062C4C6 /* CatanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		55B01D331F493C0E0005B93F /* Catan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55B01D461F493C0E0005B93F /* Build configuration list for PBXNativeTarget "Catan" */;
@@ -279,10 +359,16 @@
 		55B01D2C1F493C0E0005B93F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "David Elsonbaty";
 				TargetAttributes = {
+					55597EB11F800C9A0062C4C6 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = NC6PEUTA52;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 55B01D331F493C0E0005B93F;
+					};
 					55B01D331F493C0E0005B93F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = NC6PEUTA52;
@@ -305,11 +391,19 @@
 			projectRoot = "";
 			targets = (
 				55B01D331F493C0E0005B93F /* Catan */,
+				55597EB11F800C9A0062C4C6 /* CatanTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		55597EB01F800C9A0062C4C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55B01D321F493C0E0005B93F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +439,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		55597EAE1F800C9A0062C4C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55597EB51F800C9A0062C4C6 /* CatanTests.swift in Sources */,
+				55597EBE1F800CFA0062C4C6 /* DoubleArrayPosition.swift in Sources */,
+				55597EBD1F800CB90062C4C6 /* DoubleArrayPositionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55B01D301F493C0E0005B93F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,8 +469,10 @@
 				55B01D501F4940200005B93F /* GameBoard.swift in Sources */,
 				5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */,
 				553545151F4FDDF700D21E65 /* Port.swift in Sources */,
+				55597EA91F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift in Sources */,
 				5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */,
 				55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */,
+				55597EA61F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift in Sources */,
 				5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */,
 				55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */,
 				553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */,
@@ -374,10 +480,22 @@
 				55B01D521F4945D60005B93F /* GameDefinition.swift in Sources */,
 				553545131F4FD9BF00D21E65 /* DiceCombinationTokenView.swift in Sources */,
 				5521E1211F6A27B2006A6644 /* Button.swift in Sources */,
+				55597EC01F80139C0062C4C6 /* Int+Additions.swift in Sources */,
+				55597EAD1F800C730062C4C6 /* DoubleArrayPosition.swift in Sources */,
+				55597EC21F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift in Sources */,
+				55597EAB1F8004350062C4C6 /* GameBoardFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55597EB81F800C9A0062C4C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55B01D331F493C0E0005B93F /* Catan */;
+			targetProxy = 55597EB71F800C9A0062C4C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		55B01D3B1F493C0E0005B93F /* Main.storyboard */ = {
@@ -401,6 +519,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		55597EBA1F800C9A0062C4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NC6PEUTA52;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CatanTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.matterly.CatanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Catan.app/Catan";
+			};
+			name = Debug;
+		};
+		55597EBB1F800C9A0062C4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NC6PEUTA52;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CatanTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.matterly.CatanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Catan.app/Catan";
+			};
+			name = Release;
+		};
 		55B01D441F493C0E0005B93F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -554,6 +714,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		55597EB91F800C9A0062C4C6 /* Build configuration list for PBXNativeTarget "CatanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55597EBA1F800C9A0062C4C6 /* Debug */,
+				55597EBB1F800C9A0062C4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		55B01D2F1F493C0E0005B93F /* Build configuration list for PBXProject "Catan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

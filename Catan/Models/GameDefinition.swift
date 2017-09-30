@@ -93,7 +93,6 @@ extension GameDefinition {
         assert(randomPortsIterator.next() == nil, "Too many ports provided for board layout")
         assert(randomHexagonsIterator.next() == nil, "Too many hexagons proviced for board layout")
         
-        let gameBoard = GameBoard(pieces: generatedBoardPieces)
-        return gameBoard.isEvenlySetup() ? gameBoard : generatedBoard()
+        return GameBoard(pieces: generatedBoardPieces)
     }
 }

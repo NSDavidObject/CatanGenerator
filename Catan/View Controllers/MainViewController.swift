@@ -73,6 +73,7 @@ class MainViewController: UIViewController {
     @objc func didTapGameBoardView() {
         areProbabilityTokensEnabled = !areProbabilityTokensEnabled
         boardView.toggleProbabilityTokens(on: areProbabilityTokensEnabled, animated: true)
+        FeedbackGenerator.generate(of: .selection)
     }
     
     func didUpdateCurrentGameType() {
@@ -86,7 +87,7 @@ class MainViewController: UIViewController {
     
     func generateGameBoard() {
         let gameBoard = GameBoardFactory.fairlyDistributedGameBoard(ofType: gameType)
-        boardView.setup(with: gameBoard)
+        boardView.setup(with: gameBoard, showingProbabilityTokens: areProbabilityTokensEnabled)
     }
     
     func updateSubviewsAlpha(to alpha: CGFloat) {

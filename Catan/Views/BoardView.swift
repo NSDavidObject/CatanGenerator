@@ -13,9 +13,10 @@ class BoardView: UIView {
     private var gameBoard: GameBoard? = nil
     private var gameBoardViews: [UIView] = []
     
-    func setup(with gameBoard: GameBoard) {
+    func setup(with gameBoard: GameBoard, showingProbabilityTokens: Bool) {
         self.gameBoard = gameBoard
         buildBoard()
+        toggleProbabilityTokens(on: showingProbabilityTokens, animated: false)
     }
     
     func toggleProbabilityTokens(on: Bool, animated: Bool) {

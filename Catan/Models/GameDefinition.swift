@@ -72,7 +72,7 @@ extension GameDefinition {
         return (resourceHexagons + theifHexagons).shuffled()
     }
     
-    static func generatedBoard() -> GameBoard {
+    static func generatedBoardPieces() -> [[GameBoardPiece]] {
         var randomPortsIterator = self.ports.shuffled().makeIterator()
         var randomHexagonsIterator = randomHexagons(count: numberOfHexagons).makeIterator()
         let generatedBoardPieces = Self.layout.map { gameBoardPiecePlaceholders -> [GameBoardPiece] in
@@ -92,7 +92,7 @@ extension GameDefinition {
         
         assert(randomPortsIterator.next() == nil, "Too many ports provided for board layout")
         assert(randomHexagonsIterator.next() == nil, "Too many hexagons proviced for board layout")
-        
-        return GameBoard(pieces: generatedBoardPieces)
+
+        return generatedBoardPieces
     }
 }

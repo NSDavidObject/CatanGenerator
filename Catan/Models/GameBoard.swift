@@ -10,10 +10,12 @@ import Foundation
 
 struct GameBoard {
     
+    let type: GameType
     let pieces: [[GameBoardPiece]]
     let maxNumberOfHexagonsInRow: Int
     
-    init(pieces: [[GameBoardPiece]]) {
+    init(type: GameType, pieces: [[GameBoardPiece]]) {
+        self.type = type
         self.pieces = pieces
         maxNumberOfHexagonsInRow = GameBoard.maxNumberOfHexagonsInRow(in: pieces)
     }

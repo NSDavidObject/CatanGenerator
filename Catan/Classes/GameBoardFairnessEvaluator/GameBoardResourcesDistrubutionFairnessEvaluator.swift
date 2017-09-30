@@ -8,16 +8,26 @@
 
 import Foundation
 
-struct GameBoardResourcesDistrubutionFairnessEvaluator: GameBoardFairnessEvaluator {
+private extension GameType {
     
-    static let maxNumberOfResourcesOfCloseProximity: Int = 3
+    var maxNumberOfResourcesOfCloseProximitry: Int {
+        switch self {
+        case .classic:
+            return 2
+        case .extendedClassic:
+            return 3
+        }
+    }
+}
+
+struct GameBoardResourcesDistrubutionFairnessEvaluator: GameBoardFairnessEvaluator {
     
     static func isGameBoardFairlySetup(_ gameBoard: GameBoard) -> Bool {
         guard var currentGameBoardPiecePosition: DoubleArrayPosition = DoubleArrayPosition.firstPosition(in: gameBoard.pieces) else { return true }
         
         func isCurrentResourcePositionFairlyDistributed() -> Bool {
             let numberOfAdjacentSameResources = numberOfAdjacentSameResouces(to: currentGameBoardPiecePosition, inGameBoard: gameBoard)
-            return numberOfAdjacentSameResources < GameBoardResourcesDistrubutionFairnessEvaluator.maxNumberOfResourcesOfCloseProximity.predecessor
+            return numberOfAdjacentSameResources < gameBoard.type.maxNumberOfResourcesOfCloseProximitry
         }
         
         if !isCurrentResourcePositionFairlyDistributed() {

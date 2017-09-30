@@ -9,13 +9,18 @@
 import UIKit
 import Fabric
 import Crashlytics
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         Fabric.with([Crashlytics.self])
+        
+        // Disable app's audio players from interupting any playing music
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
         
         return true
     }

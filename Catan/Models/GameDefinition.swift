@@ -95,4 +95,17 @@ extension GameDefinition {
 
         return generatedBoardPieces
     }
+    
+    static func replaceAllHexagon(in board: [[GameBoardPiece]]) -> [[GameBoardPiece]] {
+        var randomHexagonsIterator = randomHexagons(count: numberOfHexagons).makeIterator()
+        var newBoard = board
+        for (rowIndex, row) in board.enumerated() {
+            for (pieceIndex, piece) in row.enumerated() {
+                guard case .hexagon = piece else { continue }
+                guard let nextHexagon = randomHexagonsIterator.next() else { fatalError("Not enough hexagons for board layout provided") }
+                newBoard[rowIndex][pieceIndex] = GameBoardPiece.hexagon(nextHexagon)
+            }
+        }
+        return newBoard
+    }
 }

@@ -10,19 +10,27 @@ import Foundation
 
 struct GameBoardFactory {
     
-    static let gameBoardFairnessEvaluators: [GameBoardFairnessEvaluator.Type] = [
+    private static let gameBoardFairnessEvaluators: [GameBoardFairnessEvaluator.Type] = [
         GameBoardProbabilityDistributionFairnessEvaluator.self,
+        GameBoardResourceGroupingFairnessEvaluator.self,
         GameBoardResourcesDistrubutionFairnessEvaluator.self
     ]
     
-    static func gameBoard(ofType type: GameType) -> GameBoard {
+    private static func gameBoard(ofType type: GameType) -> GameBoard {
         let generatedGameBoardPieces = type.definition.generatedBoardPieces()
         return GameBoard(type: type, pieces: generatedGameBoardPieces)
     }
     
+    private static func shuffleHexagons(inGameBoard gameBoard: GameBoard) -> GameBoard {
+        let shuffledGameBoardPieces = gameBoard.type.definition.replaceAllHexagon(in: gameBoard.pieces)
+        return GameBoard(type: gameBoard.type, pieces: shuffledGameBoardPieces)
+    }
+    
     static func fairlyDistributedGameBoard(ofType type: GameType) -> GameBoard {
-        let generatedGameBoard = gameBoard(ofType: type)
-        let isGeneratedGameBoardFairlyDistributed = GameBoardFactory.gameBoardFairnessEvaluators.allPass({ $0.isGameBoardFairlySetup(generatedGameBoard) })
-        return isGeneratedGameBoardFairlyDistributed ? generatedGameBoard : fairlyDistributedGameBoard(ofType: type)
+        var generatedGameBoard = gameBoard(ofType: type)
+        while !GameBoardFactory.gameBoardFairnessEvaluators.allPass({ $0.isGameBoardFairlySetup(generatedGameBoard) }) {
+            generatedGameBoard = shuffleHexagons(inGameBoard: generatedGameBoard)
+        }
+        return generatedGameBoard
     }
 }

@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Fabric.with([Crashlytics.self])
         
+        // Prevent iPhone from falling asleep
+        UIApplication.shared.isIdleTimerDisabled = true
+        
         // Disable app's audio players from interupting any playing music
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
         

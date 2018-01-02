@@ -17,4 +17,8 @@ extension Int {
     var predecessor: Int {
         return self - 1
     }
+        
+    init(_ bool: Bool) {
+        self = bool ? 1 : 0
+    }
 }

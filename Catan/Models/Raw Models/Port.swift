@@ -21,3 +21,16 @@ enum Port {
     case wild
     case resource(Resource)
 }
+
+extension Port: Equatable {
+    static func ==(lhs: Port, rhs: Port) -> Bool {
+        switch (lhs, rhs) {
+        case (.wild, .wild):
+            return true
+        case (.resource(let lhsResource), .resource(let rhsResource)):
+            return lhsResource == rhsResource
+        default:
+            return false
+        }
+    }
+}

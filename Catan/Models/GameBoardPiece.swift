@@ -48,3 +48,32 @@ enum GameBoardPiece {
     case hexagon(Hexagon)
     case port(Port, location: Port.Location)
 }
+
+extension GameBoardPiece: Equatable {
+    
+    static func ==(lhs: GameBoardPiece, rhs: GameBoardPiece) -> Bool {
+        switch (lhs, rhs) {
+        case (.port(let lhsPort, location: _), .port(let rhsPort, location: _)):
+            return lhsPort == rhsPort
+        case (.hexagon(let lhsHexagon), .hexagon(let rhsHexagon)):
+            return lhsHexagon == rhsHexagon
+        case (.empty, .empty):
+            return true
+        default:
+            return false
+        }
+    }
+}
+
+extension GameBoardPiece.Hexagon: Equatable {
+    static func ==(lhs: GameBoardPiece.Hexagon, rhs: GameBoardPiece.Hexagon) -> Bool {
+        switch (lhs, rhs) {
+        case (.theif, .theif):
+            return true
+        case (.resource(let lhsResource, let lhsDiceCombination), .resource(let rhsResource, let rhsDiceCombination)):
+            return lhsResource == rhsResource && lhsDiceCombination == rhsDiceCombination
+        default:
+            return false
+        }
+    }
+}

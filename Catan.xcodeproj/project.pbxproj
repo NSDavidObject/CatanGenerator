@@ -41,6 +41,8 @@
 		55597EC61F803E640062C4C6 /* UserDefaults+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC51F803E640062C4C6 /* UserDefaults+Additions.swift */; };
 		55597EC81F803EE30062C4C6 /* DefaultsGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */; };
 		55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */; };
+		5562EBB11FF1587E0036A17E /* Array+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562EBB01FF1587E0036A17E /* Array+Additions.swift */; };
+		5565FEC11FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565FEC01FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift */; };
 		55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D371F493C0E0005B93F /* AppDelegate.swift */; };
 		55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D391F493C0E0005B93F /* MainViewController.swift */; };
 		55B01D3D1F493C0E0005B93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B01D3B1F493C0E0005B93F /* Main.storyboard */; };
@@ -56,6 +58,9 @@
 		55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C11F4E2E2B0079372A /* HexagonView.swift */; };
 		55C003C41F4F78CD0079372A /* Optional+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C003C31F4F78CD0079372A /* Optional+Additions.swift */; };
 		55E106B71F8933E40016BDBE /* GameBoardResourceGroupingFairnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E106B61F8933E40016BDBE /* GameBoardResourceGroupingFairnessEvaluator.swift */; };
+		55ED5DC31FFB0B180053429B /* GameBoardDistributionRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5DC21FFB0B180053429B /* GameBoardDistributionRule.swift */; };
+		55ED5DC51FFB0B390053429B /* GameBoardDistributionAdjacentResourcesRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5DC41FFB0B390053429B /* GameBoardDistributionAdjacentResourcesRule.swift */; };
+		55ED5DC71FFB0B4F0053429B /* GameBoardDistributionAdjacentHighProbabilityRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED5DC61FFB0B4F0053429B /* GameBoardDistributionAdjacentHighProbabilityRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +109,8 @@
 		55597EC51F803E640062C4C6 /* UserDefaults+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Additions.swift"; sourceTree = "<group>"; };
 		55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsGameType.swift; sourceTree = "<group>"; };
 		55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentlyUsedGameTypePersistedSetting.swift; sourceTree = "<group>"; };
+		5562EBB01FF1587E0036A17E /* Array+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Additions.swift"; sourceTree = "<group>"; };
+		5565FEC01FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardResourcesDistrubutionRepetitionEvaluator.swift; sourceTree = "<group>"; };
 		55B01D341F493C0E0005B93F /* Catan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B01D371F493C0E0005B93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B01D391F493C0E0005B93F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +128,9 @@
 		55C003C11F4E2E2B0079372A /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		55C003C31F4F78CD0079372A /* Optional+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Additions.swift"; sourceTree = "<group>"; };
 		55E106B61F8933E40016BDBE /* GameBoardResourceGroupingFairnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardResourceGroupingFairnessEvaluator.swift; sourceTree = "<group>"; };
+		55ED5DC21FFB0B180053429B /* GameBoardDistributionRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardDistributionRule.swift; sourceTree = "<group>"; };
+		55ED5DC41FFB0B390053429B /* GameBoardDistributionAdjacentResourcesRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardDistributionAdjacentResourcesRule.swift; sourceTree = "<group>"; };
+		55ED5DC61FFB0B4F0053429B /* GameBoardDistributionAdjacentHighProbabilityRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardDistributionAdjacentHighProbabilityRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				5513AE2F1F4A06AF00D320D2 /* Collection+Additions.swift */,
+				5562EBB01FF1587E0036A17E /* Array+Additions.swift */,
 				55C003C31F4F78CD0079372A /* Optional+Additions.swift */,
 				55597EBF1F80139C0062C4C6 /* Int+Additions.swift */,
 				55597EC51F803E640062C4C6 /* UserDefaults+Additions.swift */,
@@ -233,6 +244,7 @@
 				55597EAC1F800C730062C4C6 /* DoubleArrayPosition.swift */,
 				55B774041F6E02E5001F58BC /* FeedbackGenerator.swift */,
 				55597EAA1F8004350062C4C6 /* GameBoardFactory.swift */,
+				55ED5DC11FFB0AFF0053429B /* GameBoardDistributionRule */,
 				55597EA71F7FFA9A0062C4C6 /* GameBoardFairnessEvaluator */,
 				5521E1221F6A282D006A6644 /* ProportionalCornerRadius.swift */,
 				5521E1241F6A2893006A6644 /* Sound Player */,
@@ -261,6 +273,7 @@
 				55E106B61F8933E40016BDBE /* GameBoardResourceGroupingFairnessEvaluator.swift */,
 				55597EA81F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift */,
 				55597EC11F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift */,
+				5565FEC01FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift */,
 			);
 			path = GameBoardFairnessEvaluator;
 			sourceTree = "<group>";
@@ -335,6 +348,16 @@
 				5555F2191F533F4700EC2CFE /* GameType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55ED5DC11FFB0AFF0053429B /* GameBoardDistributionRule */ = {
+			isa = PBXGroup;
+			children = (
+				55ED5DC21FFB0B180053429B /* GameBoardDistributionRule.swift */,
+				55ED5DC41FFB0B390053429B /* GameBoardDistributionAdjacentResourcesRule.swift */,
+				55ED5DC61FFB0B4F0053429B /* GameBoardDistributionAdjacentHighProbabilityRule.swift */,
+			);
+			path = GameBoardDistributionRule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,15 +516,20 @@
 				55B01D501F4940200005B93F /* GameBoard.swift in Sources */,
 				5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */,
 				553545151F4FDDF700D21E65 /* Port.swift in Sources */,
+				5565FEC11FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift in Sources */,
 				55597EA91F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift in Sources */,
 				5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */,
 				55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */,
 				55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */,
 				55597EA61F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift in Sources */,
+				55ED5DC31FFB0B180053429B /* GameBoardDistributionRule.swift in Sources */,
 				55597EC41F803E140062C4C6 /* DefaultsItem.swift in Sources */,
 				5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */,
+				55ED5DC51FFB0B390053429B /* GameBoardDistributionAdjacentResourcesRule.swift in Sources */,
 				55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */,
 				553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */,
+				55ED5DC71FFB0B4F0053429B /* GameBoardDistributionAdjacentHighProbabilityRule.swift in Sources */,
+				5562EBB11FF1587E0036A17E /* Array+Additions.swift in Sources */,
 				55E106B71F8933E40016BDBE /* GameBoardResourceGroupingFairnessEvaluator.swift in Sources */,
 				55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */,
 				55597EC81F803EE30062C4C6 /* DefaultsGameType.swift in Sources */,

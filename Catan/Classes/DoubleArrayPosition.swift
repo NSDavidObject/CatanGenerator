@@ -32,8 +32,8 @@ struct DoubleArrayPosition {
     }
     
     func nextSubsequentPosition(in doubleArray: [[Any]]) -> DoubleArrayPosition? {
-        let nextColumnIndex = positionX + 1
-        let nextRowIndex = positionY + 1
+        let nextColumnIndex = positionX.successor
+        let nextRowIndex = positionY.successor
         if doubleArray[positionY].count > nextColumnIndex {
             return DoubleArrayPosition(positionX: nextColumnIndex, positionY: positionY)
         } else if doubleArray.count > nextRowIndex {
@@ -52,5 +52,58 @@ extension DoubleArrayPosition: Hashable {
     static func == (lhs: DoubleArrayPosition, rhs: DoubleArrayPosition) -> Bool {
         return lhs.positionX == rhs.positionX &&
             lhs.positionY == rhs.positionY
+    }
+}
+
+extension DoubleArrayPosition {
+    
+    enum Adjacent {
+        case left
+        case right
+        case topLeft
+        case topRight
+        case bottomLeft
+        case bottomRight
+    }
+    
+    func adjacentPosition(_ adjacent: Adjacent, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition? {
+        let position: DoubleArrayPosition = adjacentPosition(adjacent, inGameBoard: gameBoard)
+        guard let _ = position.element(inDoubleArray: gameBoard.pieces) else { return nil }
+        return position
+    }
+    
+    private func adjacentPosition(_ adjacent: Adjacent, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
+        switch adjacent {
+        case .left: return DoubleArrayPosition(positionX: positionX.predecessor, positionY: positionY)
+        case .right: return DoubleArrayPosition(positionX: positionX.successor, positionY: positionY)
+        case .topLeft: return positionInPreviousRow(toLeft: true, inGameBoard: gameBoard)
+        case .topRight: return positionInPreviousRow(toLeft: false, inGameBoard: gameBoard)
+        case .bottomLeft: return positionInNextRow(toLeft: true, inGameBoard: gameBoard)
+        case .bottomRight: return positionInNextRow(toLeft: false, inGameBoard: gameBoard)
+        }
+    }
+    
+    private func position(toRowCount: Int, toLeft: Bool, toNextRow: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
+        let fromRowCount = gameBoard.pieces[positionY].count
+        
+        let positionX: Int
+        if toLeft {
+            positionX = self.positionX - Int(fromRowCount >= toRowCount)
+        } else {
+            positionX = self.positionX + Int(fromRowCount < toRowCount)
+        }
+        
+        let adjustedPositionY = toNextRow ? positionY.successor : positionY.predecessor
+        return DoubleArrayPosition(positionX: positionX, positionY: adjustedPositionY)
+    }
+    
+    private func positionInNextRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
+        let toRowCount = gameBoard.pieces[positionY.successor].count
+        return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: true, inGameBoard: gameBoard)
+    }
+    
+    private func positionInPreviousRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
+        let toRowCount = gameBoard.pieces[positionY.predecessor].count
+        return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: false, inGameBoard: gameBoard)
     }
 }

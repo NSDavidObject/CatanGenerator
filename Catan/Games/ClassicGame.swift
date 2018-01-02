@@ -10,6 +10,11 @@ import Foundation
 
 struct ClassicGame: GameDefinition {
     
+    static let distructionRules: [GameBoardDistributionRule.Type] = [
+        GameBoardDistributionAdjacentResourcesRule.self,
+        GameBoardDistributionAdjacentHighProbabilityRule.self
+    ]
+    
     static let portsList: [(port: Port, count: Int)] = [
         (port: .wild, count: 4),
         (port: .resource(.hay), count: 1),

@@ -67,12 +67,12 @@ extension DoubleArrayPosition {
     }
     
     func adjacentPosition(_ adjacent: Adjacent, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition? {
-        let position: DoubleArrayPosition = adjacentPosition(adjacent, inGameBoard: gameBoard)
+        guard let position: DoubleArrayPosition = self.position(adjacent, inGameBoard: gameBoard) else { return nil }
         guard let _ = position.element(inDoubleArray: gameBoard.pieces) else { return nil }
         return position
     }
     
-    private func adjacentPosition(_ adjacent: Adjacent, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
+    private func position(_ adjacent: Adjacent, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition? {
         switch adjacent {
         case .left: return DoubleArrayPosition(positionX: positionX.predecessor, positionY: positionY)
         case .right: return DoubleArrayPosition(positionX: positionX.successor, positionY: positionY)
@@ -97,13 +97,13 @@ extension DoubleArrayPosition {
         return DoubleArrayPosition(positionX: positionX, positionY: adjustedPositionY)
     }
     
-    private func positionInNextRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
-        let toRowCount = gameBoard.pieces[positionY.successor].count
+    private func positionInNextRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition? {
+        guard let toRowCount = gameBoard.pieces[safe: positionY.successor]?.count else { return nil }
         return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: true, inGameBoard: gameBoard)
     }
     
-    private func positionInPreviousRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
-        let toRowCount = gameBoard.pieces[positionY.predecessor].count
+    private func positionInPreviousRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition? {
+        guard let toRowCount = gameBoard.pieces[safe: positionY.predecessor]?.count else { return nil }
         return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: false, inGameBoard: gameBoard)
     }
 }

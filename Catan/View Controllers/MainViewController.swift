@@ -8,6 +8,11 @@
 
 import UIKit
 
+private struct Constants {
+    static let generateButtonFont: UIFont = FontType.light(.small).font
+    static let gameTypeTitleLabelFont: UIFont = FontType.light(.tiny).font
+}
+
 class MainViewController: UIViewController {
 
     static let launchAnimationDuration: TimeInterval = 0.8
@@ -43,11 +48,11 @@ class MainViewController: UIViewController {
         generateButton.proportionalCornerRadius = .circular
         generateButton.setTitle("Generate", for: .normal)
         generateButton.setTitleColor(UIColor.appColorMainViewControllerGenerateButton, for: .normal)
-        generateButton.titleLabel?.font = UIFont.appFontMainViewControllerGenerateButton
+        generateButton.titleLabel?.font = Constants.generateButtonFont
         
         gameTypeToggleButton.clickSound = .toggle
         gameTypeToggleButton.feedbackType = .success
-        gameTypeToggleButton.titleLabel?.font = UIFont.appFontMainViewControllerGameTypeTitleLabel
+        gameTypeToggleButton.titleLabel?.font = Constants.gameTypeTitleLabelFont
         gameTypeToggleButton.setTitleColor(UIColor.appColorMainViewControllerGameTypeTitleLabel, for: .normal)
         
         didUpdateCurrentGameType()

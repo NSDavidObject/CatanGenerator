@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,23 +20,24 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="74S-gF-eA3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7L-ox-dJb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5X-0V-WRh" customClass="BoardView" customModule="Catan" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="15" width="345" height="503"/>
+                                        <rect key="frame" x="15" y="15" width="384" height="567"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo2-TC-wmo" customClass="TransformableButton" customModule="Catan" customModuleProvider="target">
-                                        <rect key="frame" x="101" y="533" width="172" height="50"/>
+                                        <rect key="frame" x="111.66666666666667" y="597" width="189.66666666666663" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Vo2-TC-wmo" secondAttribute="height" multiplier="172:50" id="CHW-40-F9e"/>
+                                            <constraint firstAttribute="width" secondItem="Vo2-TC-wmo" secondAttribute="height" multiplier="172:50" priority="750" id="CHW-40-F9e"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="cID-Ma-7Ch"/>
                                         </constraints>
                                         <state key="normal" title="Generate"/>
                                         <connections>
@@ -44,7 +45,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQY-mQ-xbS" customClass="TransformableButton" customModule="Catan" customModuleProvider="target">
-                                        <rect key="frame" x="160" y="598" width="54" height="34"/>
+                                        <rect key="frame" x="180.66666666666666" y="667" width="54" height="34"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="gameTypeToggleButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qiv-P2-pp2"/>
@@ -53,28 +54,51 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="B5X-0V-WRh" firstAttribute="top" secondItem="s7L-ox-dJb" secondAttribute="top" constant="15" id="Tza-WM-8KN"/>
+                                    <constraint firstItem="B5X-0V-WRh" firstAttribute="centerX" secondItem="s7L-ox-dJb" secondAttribute="centerX" id="W9f-tp-kW4"/>
                                     <constraint firstItem="oQY-mQ-xbS" firstAttribute="top" secondItem="Vo2-TC-wmo" secondAttribute="bottom" constant="15" id="boI-Hv-rPo"/>
                                     <constraint firstItem="B5X-0V-WRh" firstAttribute="leading" secondItem="s7L-ox-dJb" secondAttribute="leading" constant="15" id="gz9-NK-Yax"/>
-                                    <constraint firstItem="Vo2-TC-wmo" firstAttribute="width" secondItem="s7L-ox-dJb" secondAttribute="width" multiplier="172:375" id="jhp-xH-Dwt"/>
+                                    <constraint firstItem="Vo2-TC-wmo" firstAttribute="width" secondItem="s7L-ox-dJb" secondAttribute="width" multiplier="172:375" priority="750" id="jhp-xH-Dwt"/>
                                     <constraint firstItem="Vo2-TC-wmo" firstAttribute="top" secondItem="B5X-0V-WRh" secondAttribute="bottom" constant="15" id="nsw-Jc-qsO"/>
                                     <constraint firstAttribute="trailing" secondItem="B5X-0V-WRh" secondAttribute="trailing" constant="15" id="qbb-qD-r6Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="oQY-mQ-xbS" secondAttribute="bottom" constant="15" id="ssf-np-6cE"/>
+                                    <constraint firstAttribute="bottom" secondItem="oQY-mQ-xbS" secondAttribute="bottom" constant="15" id="ssf-np-6cE">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                    </constraint>
                                     <constraint firstItem="Vo2-TC-wmo" firstAttribute="centerX" secondItem="s7L-ox-dJb" secondAttribute="centerX" id="v7x-Zd-FTs"/>
                                     <constraint firstItem="oQY-mQ-xbS" firstAttribute="centerX" secondItem="s7L-ox-dJb" secondAttribute="centerX" id="v9h-0N-K3Q"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="gz9-NK-Yax"/>
+                                        <exclude reference="qbb-qD-r6Y"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="s7L-ox-dJb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2Jy-iu-ANP"/>
                             <constraint firstAttribute="trailing" secondItem="74S-gF-eA3" secondAttribute="trailing" id="3Bx-dY-XgB"/>
+                            <constraint firstItem="B5X-0V-WRh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.85" id="3Us-vY-VNC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="s7L-ox-dJb" secondAttribute="bottom" id="AkD-S6-Keq"/>
                             <constraint firstAttribute="bottom" secondItem="74S-gF-eA3" secondAttribute="bottom" id="CkD-iT-5vQ"/>
                             <constraint firstItem="74S-gF-eA3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EsP-zo-pAb"/>
+                            <constraint firstItem="B5X-0V-WRh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ll8-Ez-HlZ"/>
                             <constraint firstItem="s7L-ox-dJb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bhG-cB-FQJ"/>
                             <constraint firstAttribute="trailing" secondItem="s7L-ox-dJb" secondAttribute="trailing" id="dnm-vC-Oxe"/>
                             <constraint firstItem="74S-gF-eA3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tvj-Zw-OH6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Us-vY-VNC"/>
+                                <exclude reference="Ll8-Ez-HlZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="3Us-vY-VNC"/>
+                                <include reference="Ll8-Ez-HlZ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="boardView" destination="B5X-0V-WRh" id="O3G-EB-fha"/>

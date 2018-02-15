@@ -15,6 +15,8 @@ enum GameBoardPiecePlaceholder {
 }
 
 protocol GameDefinition {
+    static var distructionRules: [GameBoardDistributionRule.Type] { get }
+
     static var layout: [[GameBoardPiecePlaceholder]] { get }
     static var portsList: [(port: Port, count: Int)] { get }
     static var resourcesList: [(resource: Resource, count: Int)] { get }
@@ -73,39 +75,67 @@ extension GameDefinition {
     }
     
     static func generatedBoardPieces() -> [[GameBoardPiece]] {
+        let gameBoardEmptyPieces: [[GameBoardPiece]] = Self.layout.map { (row) -> [GameBoardPiece] in
+            return row.map({ (placeholder) -> GameBoardPiece in
+                return .empty
+            })
+        }
+
+        let gameBoard = GameBoard(type: .classic, pieces: gameBoardEmptyPieces)
+        
         var randomPortsIterator = self.ports.shuffled().makeIterator()
-        var randomHexagonsIterator = randomHexagons(count: numberOfHexagons).makeIterator()
-        let generatedBoardPieces = Self.layout.map { gameBoardPiecePlaceholders -> [GameBoardPiece] in
-            return gameBoardPiecePlaceholders.map({ placeholder -> GameBoardPiece in
+        var randomHexagons = self.randomHexagons(count: numberOfHexagons)
+        
+        var generatedBoard: [[GameBoardPiece]] = []
+        for (rowIndex, row) in Self.layout.enumerated() {
+            var currentRow: [GameBoardPiece] = []
+            for (itemIndex, placeholder) in row.enumerated() {
                 switch placeholder {
                 case GameBoardPiecePlaceholder.empty:
-                    return GameBoardPiece.empty
+                    currentRow.append(GameBoardPiece.empty)
                 case GameBoardPiecePlaceholder.hexagon:
-                    guard let nextHexagon = randomHexagonsIterator.next() else { fatalError("Not enough hexagons for board layout provided") }
-                    return GameBoardPiece.hexagon(nextHexagon)
+                    
+                    let position = DoubleArrayPosition(positionX: itemIndex, positionY: rowIndex)
+                    var adjacentHexagons: [GameBoardPiece.Hexagon] = []
+                    
+                    // Top left
+                    if let topLeftPosition = position.adjacentPosition(.topLeft, inGameBoard: gameBoard) {
+                        if let hexagon = generatedBoard[topLeftPosition.positionY][topLeftPosition.positionX].hexagon {
+                            adjacentHexagons.append(hexagon)
+                        }
+                    }
+                    
+                    // Top Right
+                    if let topRightPosition = position.adjacentPosition(.topRight, inGameBoard: gameBoard) {
+                        if let hexagon = generatedBoard[topRightPosition.positionY][topRightPosition.positionX].hexagon {
+                            adjacentHexagons.append(hexagon)
+                        }
+                    }
+                    
+                    // Handle left case
+                    if let leftHexagon = currentRow.last?.hexagon {
+                        adjacentHexagons.append(leftHexagon)
+                    }
+                    
+                    guard let nextHexagon = randomHexagons.dropFirst(where: { hexagon in
+                        return distructionRules.allPass({ $0.isHexagonValid(hexagon, withAdjacentHexagons: adjacentHexagons) })
+                    }) else {
+                        // Stuck without any options while sticking with the no adjacent same resources rule!
+                        return Self.generatedBoardPieces()
+                    }
+                    
+                    currentRow.append(GameBoardPiece.hexagon(nextHexagon))
                 case GameBoardPiecePlaceholder.port(location: let location):
                     guard let nextPort = randomPortsIterator.next() else { fatalError("Not enough ports for board layout provided") }
-                    return GameBoardPiece.port(nextPort, location: location)
+                    currentRow.append(GameBoardPiece.port(nextPort, location: location))
                 }
-            })
+            }
+            generatedBoard.append(currentRow)
         }
         
         assert(randomPortsIterator.next() == nil, "Too many ports provided for board layout")
-        assert(randomHexagonsIterator.next() == nil, "Too many hexagons proviced for board layout")
-
-        return generatedBoardPieces
-    }
-    
-    static func replaceAllHexagon(in board: [[GameBoardPiece]]) -> [[GameBoardPiece]] {
-        var randomHexagonsIterator = randomHexagons(count: numberOfHexagons).makeIterator()
-        var newBoard = board
-        for (rowIndex, row) in board.enumerated() {
-            for (pieceIndex, piece) in row.enumerated() {
-                guard case .hexagon = piece else { continue }
-                guard let nextHexagon = randomHexagonsIterator.next() else { fatalError("Not enough hexagons for board layout provided") }
-                newBoard[rowIndex][pieceIndex] = GameBoardPiece.hexagon(nextHexagon)
-            }
-        }
-        return newBoard
+        assert(randomHexagons.count == 0, "Too many hexagons provided for board layout")
+        
+        return generatedBoard
     }
 }

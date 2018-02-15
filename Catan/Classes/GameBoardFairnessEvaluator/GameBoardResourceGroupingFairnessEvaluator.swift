@@ -34,31 +34,20 @@ struct GameBoardResourceGroupingFairnessEvaluator: GameBoardFairnessEvaluator {
         }
         
         guard let currentResourse = resourceValue(at: currentPosition) else { return false }
+        
         let currentRow = currentPosition.positionY
         let nextRowDown = currentRow.successor
         guard gameBoard.pieces.count > nextRowDown else { return false }
         
-        func leftIndexOffset(toRowIndex: Int) -> Int {
-            let fromRow = gameBoard.pieces[currentPosition.positionY]
-            let toRow = gameBoard.pieces[toRowIndex]
-            return -((fromRow.count < toRow.count) ? 0 : 1)
-        }
-        
-        func rightIndexOffset(toRowIndex: Int) -> Int {
-            let fromRow = gameBoard.pieces[currentPosition.positionY]
-            let toRow = gameBoard.pieces[toRowIndex]
-            return ((fromRow.count < toRow.count) ? 1 : 0)
-        }
-        
         func isPositionAtTheTopTipOfATriangleGroup() -> Bool {
-            let bottomLeftPosition = DoubleArrayPosition(positionX: currentPosition.positionX + leftIndexOffset(toRowIndex: nextRowDown), positionY: nextRowDown)
-            let bottomRightPosition = DoubleArrayPosition(positionX: bottomLeftPosition.positionX.successor, positionY: nextRowDown)
+            guard let bottomLeftPosition = currentPosition.adjacentPosition(.bottomLeft, inGameBoard: gameBoard),
+                let bottomRightPosition = currentPosition.adjacentPosition(.bottomRight, inGameBoard: gameBoard) else { return false }
             return (currentResourse == resourceValue(at: bottomLeftPosition)) && (currentResourse == resourceValue(at: bottomRightPosition))
         }
         
         func isPositionAtTheTopLeftOfTriangleGroup() -> Bool {
-            let rightPosition = DoubleArrayPosition(positionX: currentPosition.positionX.successor, positionY: currentPosition.positionY)
-            let bottomRightPosition = DoubleArrayPosition(positionX: currentPosition.positionX + rightIndexOffset(toRowIndex: nextRowDown), positionY: nextRowDown)
+            guard let rightPosition = currentPosition.adjacentPosition(.right, inGameBoard: gameBoard),
+                let bottomRightPosition = currentPosition.adjacentPosition(.bottomRight, inGameBoard: gameBoard) else { return false }
             return (currentResourse == resourceValue(at: rightPosition)) && (currentResourse == resourceValue(at: bottomRightPosition))
         }
             

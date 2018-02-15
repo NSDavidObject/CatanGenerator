@@ -45,7 +45,7 @@ class BoardView: UIView {
         gameBoardViews.removeAll()
         
         let numberOfSlotsPerRow = gameBoard.maxNumberOfHexagonsInRow
-        let numberOfSlotsToAccountForInRow = numberOfSlotsPerRow - 1
+        let numberOfSlotsToAccountForInRow = numberOfSlotsPerRow.predecessor
         let viewWidth = UIScreen.main.bounds.width - 30
         
         let hexagonWidth = viewWidth / CGFloat(numberOfSlotsToAccountForInRow)

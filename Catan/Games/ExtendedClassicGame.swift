@@ -10,6 +10,11 @@ import Foundation
 
 struct ExtendedClassicGame: GameDefinition {
     
+    static let distructionRules: [GameBoardDistributionRule.Type] = [
+        GameBoardDistributionAdjacentResourcesRule.self,
+        GameBoardDistributionAdjacentHighProbabilityRule.self
+    ]
+    
     static let portsList: [(port: Port, count: Int)] = [
         (port: .wild, count: 5),
         (port: .resource(.hay), count: 1),
@@ -28,7 +33,7 @@ struct ExtendedClassicGame: GameDefinition {
         ]
     
     static let diceCombinationsList: [(combination: DiceCombination, count: Int)] = [
-        (combination: .two, count: 1),
+        (combination: .two, count: 2),
         (combination: .three, count: 3),
         (combination: .four, count: 3),
         (combination: .five, count: 3),
@@ -37,7 +42,7 @@ struct ExtendedClassicGame: GameDefinition {
         (combination: .nine, count: 3),
         (combination: .ten, count: 3),
         (combination: .eleven, count: 3),
-        (combination: .twelve, count: 3)
+        (combination: .twelve, count: 2)
     ]
     
     static let layout: [[GameBoardPiecePlaceholder]] = [

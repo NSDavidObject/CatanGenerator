@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Resource: Int {
+enum Resource: Int, Equatable {
     case hay
     case clay
     case stone

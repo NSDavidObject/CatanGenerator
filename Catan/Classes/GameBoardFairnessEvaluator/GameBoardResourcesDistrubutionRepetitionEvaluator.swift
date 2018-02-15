@@ -1,5 +1,5 @@
 //
-//  GameBoardResourcesDistrubutionFairnessEvaluator.swift
+//  GameBoardResourcesDistrubutionRepetitionEvaluator.swift
 //  Catan
 //
 //  Created by David Elsonbaty on 9/30/17.
@@ -13,34 +13,29 @@ private extension GameType {
     var maxNumberOfResourcesOfCloseProximitry: Int {
         switch self {
         case .classic:
-            return 2
+            return 1
         case .extendedClassic:
-            return 2
+            return 4
         }
     }
 }
 
-struct GameBoardResourcesDistrubutionFairnessEvaluator: GameBoardFairnessEvaluator {
+struct GameBoardResourcesDistrubutionRepetitionEvaluator: GameBoardFairnessEvaluator {
     
     static func isGameBoardFairlySetup(_ gameBoard: GameBoard) -> Bool {
         guard var currentGameBoardPiecePosition: DoubleArrayPosition = DoubleArrayPosition.firstPosition(in: gameBoard.pieces) else { return true }
         
-        func isCurrentResourcePositionFairlyDistributed() -> Bool {
+        func isCurrentResourceOfCloseProximityToSameResource() -> Bool {
             let numberOfAdjacentSameResources = numberOfAdjacentSameResouces(to: currentGameBoardPiecePosition, inGameBoard: gameBoard)
-            return numberOfAdjacentSameResources < gameBoard.type.maxNumberOfResourcesOfCloseProximitry
+            return numberOfAdjacentSameResources >= 1
         }
         
-        if !isCurrentResourcePositionFairlyDistributed() {
-            return false
-        }
-        
+        var numberResourcesOfCloseProximity: Int = Int(isCurrentResourceOfCloseProximityToSameResource())
         while let nextGameBoardPiecePosition = currentGameBoardPiecePosition.nextSubsequentPosition(in: gameBoard.pieces) {
             currentGameBoardPiecePosition = nextGameBoardPiecePosition
-            if !isCurrentResourcePositionFairlyDistributed() {
-                return false
-            }
+            numberResourcesOfCloseProximity += Int(isCurrentResourceOfCloseProximityToSameResource())
+            if numberResourcesOfCloseProximity > gameBoard.type.maxNumberOfResourcesOfCloseProximitry { return false }
         }
-        
         return true
     }
     
@@ -56,18 +51,16 @@ struct GameBoardResourcesDistrubutionFairnessEvaluator: GameBoardFairnessEvaluat
                 setOfVisitedPositions.insert(checkingPosition)
                 
                 guard let resource = checkingPosition.element(inDoubleArray: gameBoard.pieces)?.hexagon?.resource, currentResource == resource else { return 0 }
-                return 1 + internal_numberOfAdjacentSameResouces(to: checkingPosition, inGameBoard: gameBoard)
+                return internal_numberOfAdjacentSameResouces(to: checkingPosition, inGameBoard: gameBoard).successor
             }
             
             var numberOfSameResources: Int = 0
-            
             let adjacentPositions: [DoubleArrayPosition.Adjacent] = [.left, .right, .bottomLeft, .bottomRight, .topRight]
             for adjacentPosition in adjacentPositions {
                 if let doubleArrayPosition = position.adjacentPosition(adjacentPosition, inGameBoard: gameBoard) {
                     numberOfSameResources += numberOfAdjacentSameResources(from: doubleArrayPosition)
                 }
             }
-            
             return numberOfSameResources
         }
         

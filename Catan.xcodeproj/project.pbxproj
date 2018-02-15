@@ -42,6 +42,7 @@
 		55597EC81F803EE30062C4C6 /* DefaultsGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */; };
 		55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */; };
 		5562EBB11FF1587E0036A17E /* Array+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5562EBB01FF1587E0036A17E /* Array+Additions.swift */; };
+		5564962E202FC5E6005A50E2 /* SeafarersGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5564962D202FC5E6005A50E2 /* SeafarersGame.swift */; };
 		5565FEC11FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565FEC01FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift */; };
 		55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D371F493C0E0005B93F /* AppDelegate.swift */; };
 		55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D391F493C0E0005B93F /* MainViewController.swift */; };
@@ -112,6 +113,7 @@
 		55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsGameType.swift; sourceTree = "<group>"; };
 		55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentlyUsedGameTypePersistedSetting.swift; sourceTree = "<group>"; };
 		5562EBB01FF1587E0036A17E /* Array+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Additions.swift"; sourceTree = "<group>"; };
+		5564962D202FC5E6005A50E2 /* SeafarersGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeafarersGame.swift; sourceTree = "<group>"; };
 		5565FEC01FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardResourcesDistrubutionRepetitionEvaluator.swift; sourceTree = "<group>"; };
 		55B01D341F493C0E0005B93F /* Catan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B01D371F493C0E0005B93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				5513AE321F4A06FB00D320D2 /* ClassicGame.swift */,
 				55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */,
+				5564962D202FC5E6005A50E2 /* SeafarersGame.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				5565FEC11FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift in Sources */,
 				55D7AD4A2016F94200735441 /* DeviceInfo.swift in Sources */,
 				55597EA91F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift in Sources */,
+				5564962E202FC5E6005A50E2 /* SeafarersGame.swift in Sources */,
 				5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */,
 				55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */,
 				55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */,

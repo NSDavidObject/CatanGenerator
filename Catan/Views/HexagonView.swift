@@ -8,6 +8,44 @@
 
 import UIKit
 
+class WaterView: UIView {
+    
+    var water: GameBoardPiece.Water? {
+        didSet { didUpdateWater() }
+    }
+    
+    let imageView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "hexagon-knight"))
+    let portContainerView: PortContainerView = PortContainerView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        imageView.image = #imageLiteral(resourceName: "hexagon-water")
+        imageView.alpha = 0.2
+        imageView.frame = bounds
+        imageView.contentMode = .scaleAspectFill
+        imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(imageView)
+        
+        portContainerView.frame = bounds
+        portContainerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(portContainerView)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func didUpdateWater() {
+        guard let water = water else { return }
+        
+        portContainerView.isHidden = (water.port == nil)
+        guard let portInfo = water.port else { return }
+        
+        portContainerView.portView.port = portInfo.0
+        portContainerView.location = portInfo.location
+    }
+}
+
 class HexagonView: UIView {
     
     var hexagon: GameBoardPiece.Hexagon? {
@@ -49,6 +87,7 @@ class HexagonView: UIView {
 }
 
 extension GameBoardPiece.Hexagon {
+    
     var image: UIImage {
         switch self {
         case .theif: return #imageLiteral(resourceName: "hexagon-knight")
@@ -59,6 +98,7 @@ extension GameBoardPiece.Hexagon {
             case .sheep: return #imageLiteral(resourceName: "hexagon-sheep")
             case .stone: return #imageLiteral(resourceName: "hexagon-stone")
             case .wood: return #imageLiteral(resourceName: "hexagon-wood")
+            case .gold: return #imageLiteral(resourceName: "hexagon-gold")
             }
         }
     }

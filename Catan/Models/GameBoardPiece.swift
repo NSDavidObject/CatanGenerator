@@ -10,6 +10,18 @@ import Foundation
 
 enum GameBoardPiece {
     
+    enum Water {
+        case plain
+        case port(Port, location: Port.Location)
+        
+        var port: (Port, location: Port.Location)? {
+            switch self {
+            case .port(let port, location: let location): return (port, location)
+            default: return nil
+            }
+        }
+    }
+    
     enum Hexagon {
         case theif
         case resource(Resource, value: DiceCombination)
@@ -26,6 +38,13 @@ enum GameBoardPiece {
             case .resource(let resource, _): return resource
             default: return nil
             }
+        }
+        
+        var isGoldWithHighProbability: Bool {
+            if case .resource(let resource, value: let diceCombination) = self {
+                return resource == .gold && diceCombination.probability.isHighest
+            }
+            return false
         }
     }
     
@@ -46,6 +65,7 @@ enum GameBoardPiece {
     
     case empty
     case hexagon(Hexagon)
+    case water(Water)
     case port(Port, location: Port.Location)
 }
 

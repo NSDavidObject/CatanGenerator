@@ -12,7 +12,7 @@ private extension GameType {
     
     var maxNumberOfResourcesOfCloseProximitry: Int {
         switch self {
-        case .classic:
+        case .classic, .seafarers:
             return 2
         case .extendedClassic:
             return 2

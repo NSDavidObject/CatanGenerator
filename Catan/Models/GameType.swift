@@ -11,11 +11,13 @@ import Foundation
 enum GameType: Int {
     case classic
     case extendedClassic
+    case seafarers
     
     var name: String {
         switch self {
         case .classic: return "Classic Game"
         case .extendedClassic: return "Classic Game with Extension"
+        case .seafarers: return "Seafarers"
         }
     }
     
@@ -23,6 +25,7 @@ enum GameType: Int {
         switch self {
         case .classic: return ClassicGame.self
         case .extendedClassic: return ExtendedClassicGame.self
+        case .seafarers: return SeafarersGame.self
         }
     }
     

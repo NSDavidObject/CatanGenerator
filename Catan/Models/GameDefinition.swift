@@ -8,73 +8,94 @@
 
 import Foundation
 
+enum LocationType {
+    case normal
+    case island
+}
+
 enum GameBoardPiecePlaceholder {
     case empty
-    case port(location: Port.Location)
+    case island
     case hexagon
+    case plainWater
+    case port(location: Port.Location)
+    case waterPort(location: Port.Location)
+    
+    var location: LocationType? {
+        switch self {
+        case .hexagon: return .normal
+        case .island: return .island
+        default: return nil
+        }
+    }
 }
 
 protocol GameDefinition {
-    static var distructionRules: [GameBoardDistributionRule.Type] { get }
+    typealias Resources = (resource: Resource, count: Int)
+    typealias DiceCombinations = (combination: DiceCombination, count: Int)
+    
+    static var distributionRules: [GameBoardDistributionRule.Type] { get }
 
     static var layout: [[GameBoardPiecePlaceholder]] { get }
     static var portsList: [(port: Port, count: Int)] { get }
-    static var resourcesList: [(resource: Resource, count: Int)] { get }
-    static var diceCombinationsList: [(combination: DiceCombination, count: Int)] { get }
+    
+    static var resources: [LocationType: [Resources]] { get }
+    static var theifsCount: [LocationType: Int] { get }
+    static var diceCombinations: [LocationType: [DiceCombinations]] { get }
 }
 
 extension GameDefinition {
-    
-    static var numberOfHexagons: Int {
-        return Self.layout.reduce(0, { (count, row) -> Int in
-            return count + row.reduce(0, { (rowCount, placeHolder) -> Int in
-                if case .hexagon = placeHolder {
-                    return rowCount + 1
-                }
-                return rowCount
-            })
-        })
-    }
     
     static var ports: [Port] {
         return constructArray(from: Self.portsList)
     }
     
-    static var resources: [Resource] {
-        return constructArray(from: Self.resourcesList)
+    static var hexagons: [LocationType: [GameBoardPiece.Hexagon]] {
+        let shuffledResources = self.shuffledResources
+        let shuffledDiceCombinations = self.shuffledDiceCombinations
+        guard let combined = shuffledResources.combine(withDictionary: shuffledDiceCombinations) else { fatalError() }
+        
+        let resourceHexagons = combined.mapValues({ (resources, diceCombinations) -> [GameBoardPiece.Hexagon] in
+            let zippedCombinations = zip(resources, diceCombinations)
+            return zippedCombinations.map({ hexagonInfo -> GameBoardPiece.Hexagon in
+                return GameBoardPiece.Hexagon.resource(hexagonInfo.0, value: hexagonInfo.1)
+            })
+        })
+        
+        // Ensure no gold tiles are mapped to high probability numbers
+        guard resourceHexagons.allPass({ $0.value.allPass({ !$0.isGoldWithHighProbability }) }) else { return self.hexagons }
+        
+        let theifHexagons = Self.theifsCount.mapValues({ $0.map({ _ in GameBoardPiece.Hexagon.theif }) })
+        guard let combinedHexagons = resourceHexagons.combine(withDictionary: theifHexagons) else { fatalError() }
+        
+        return combinedHexagons.mapValues({ (hexagons) -> [GameBoardPiece.Hexagon] in
+            return (hexagons.0 + hexagons.1).shuffled()
+        })
     }
     
-    static var diceCombinations: [DiceCombination] {
-        return constructArray(from: Self.diceCombinationsList)
+    private static var shuffledResources: [LocationType: [Resource]] {
+        return Self.resources.mapValues({ (definitionResource) -> [Resource] in
+            return constructArray(from: definitionResource).shuffled()
+        })
+    }
+    
+    private static var shuffledDiceCombinations: [LocationType: [DiceCombination]] {
+        return Self.diceCombinations.mapValues({ (diceCombination) -> [DiceCombination] in
+            return constructArray(from: diceCombination).shuffled()
+        })
     }
     
     private static func constructArray<T>(from elements: [(T, Int)]) -> [T] {
-        var allElements: [T] = []
-        for (element, count) in elements {
-            for _ in 0..<count {
-                allElements.append(element)
-            }
-        }
-        return allElements
+        return elements.flatMap({ (item, count) -> [T] in
+            return Array(repeating: item, count: count)
+        })
     }
 }
 
 extension GameDefinition {
-    
-    private static func randomHexagons(count: Int) -> [GameBoardPiece.Hexagon] {
-        var randomCombinationsIterator = self.diceCombinations.shuffled().makeIterator()
-        let resourceHexagons = resources.map { resource -> GameBoardPiece.Hexagon in
-            guard let nextRandomCombination = randomCombinationsIterator.next() else { fatalError("Not enough combinations provided for provided resources") }
-            return .resource(resource, value: nextRandomCombination)
-        }
-        
-        let numberOfHexagons = resourceHexagons.count
-        let theifHexagonsCount = count - numberOfHexagons
-        let theifHexagons = (0..<theifHexagonsCount).map({ _ in GameBoardPiece.Hexagon.theif })
-        return (resourceHexagons + theifHexagons).shuffled()
-    }
-    
+
     static func generatedBoardPieces() -> [[GameBoardPiece]] {
+        
         let gameBoardEmptyPieces: [[GameBoardPiece]] = Self.layout.map { (row) -> [GameBoardPiece] in
             return row.map({ (placeholder) -> GameBoardPiece in
                 return .empty
@@ -84,48 +105,33 @@ extension GameDefinition {
         let gameBoard = GameBoard(type: .classic, pieces: gameBoardEmptyPieces)
         
         var randomPortsIterator = self.ports.shuffled().makeIterator()
-        var randomHexagons = self.randomHexagons(count: numberOfHexagons)
+        var randomHexagons = self.hexagons
         
         var generatedBoard: [[GameBoardPiece]] = []
         for (rowIndex, row) in Self.layout.enumerated() {
             var currentRow: [GameBoardPiece] = []
             for (itemIndex, placeholder) in row.enumerated() {
                 switch placeholder {
+                case .plainWater:
+                    currentRow.append(GameBoardPiece.water(.plain))
+                case .waterPort(location: let location):
+                    guard let nextPort = randomPortsIterator.next() else { fatalError("Not enough ports for board layout provided") }
+                    currentRow.append(GameBoardPiece.water(.port(nextPort, location: location)))
                 case GameBoardPiecePlaceholder.empty:
                     currentRow.append(GameBoardPiece.empty)
-                case GameBoardPiecePlaceholder.hexagon:
+                case .island, .hexagon:
+                    guard let locationType = placeholder.location else { fatalError() }
                     
                     let position = DoubleArrayPosition(positionX: itemIndex, positionY: rowIndex)
-                    var adjacentHexagons: [GameBoardPiece.Hexagon] = []
-                    
-                    // Top left
-                    if let topLeftPosition = position.adjacentPosition(.topLeft, inGameBoard: gameBoard) {
-                        if let hexagon = generatedBoard[topLeftPosition.positionY][topLeftPosition.positionX].hexagon {
-                            adjacentHexagons.append(hexagon)
-                        }
-                    }
-                    
-                    // Top Right
-                    if let topRightPosition = position.adjacentPosition(.topRight, inGameBoard: gameBoard) {
-                        if let hexagon = generatedBoard[topRightPosition.positionY][topRightPosition.positionX].hexagon {
-                            adjacentHexagons.append(hexagon)
-                        }
-                    }
-                    
-                    // Handle left case
-                    if let leftHexagon = currentRow.last?.hexagon {
-                        adjacentHexagons.append(leftHexagon)
-                    }
-                    
-                    guard let nextHexagon = randomHexagons.dropFirst(where: { hexagon in
-                        return distructionRules.allPass({ $0.isHexagonValid(hexagon, withAdjacentHexagons: adjacentHexagons) })
+                    let adjacentHexagons = self.adjacentHexagons(atPosition: position, currentRow: currentRow, gameBoard: gameBoard, generatedBoard: generatedBoard)
+                    guard let nextHexagon = randomHexagons[locationType]?.dropFirst(where: { hexagon -> Bool in
+                        return distributionRules.allPass({ $0.isHexagonValid(hexagon, withAdjacentHexagons: adjacentHexagons) })
                     }) else {
                         // Stuck without any options while sticking with the no adjacent same resources rule!
                         return Self.generatedBoardPieces()
                     }
-                    
                     currentRow.append(GameBoardPiece.hexagon(nextHexagon))
-                case GameBoardPiecePlaceholder.port(location: let location):
+                case .port(location: let location):
                     guard let nextPort = randomPortsIterator.next() else { fatalError("Not enough ports for board layout provided") }
                     currentRow.append(GameBoardPiece.port(nextPort, location: location))
                 }
@@ -134,8 +140,32 @@ extension GameDefinition {
         }
         
         assert(randomPortsIterator.next() == nil, "Too many ports provided for board layout")
-        assert(randomHexagons.count == 0, "Too many hexagons provided for board layout")
+        assert(randomHexagons.allPass({ $0.value.count == 0 }), "Too many hexagons provided for board layout")
         
         return generatedBoard
+    }
+    
+    static func adjacentHexagons(atPosition position: DoubleArrayPosition, currentRow: [GameBoardPiece], gameBoard: GameBoard, generatedBoard: [[GameBoardPiece]] ) -> [GameBoardPiece.Hexagon] {
+        var adjacentHexagons: [GameBoardPiece.Hexagon] = []
+        
+        // Top left
+        if let topLeftPosition = position.adjacentPosition(.topLeft, inGameBoard: gameBoard) {
+            if let hexagon = generatedBoard[topLeftPosition.positionY][topLeftPosition.positionX].hexagon {
+                adjacentHexagons.append(hexagon)
+            }
+        }
+        
+        // Top Right
+        if let topRightPosition = position.adjacentPosition(.topRight, inGameBoard: gameBoard) {
+            if let hexagon = generatedBoard[topRightPosition.positionY][topRightPosition.positionX].hexagon {
+                adjacentHexagons.append(hexagon)
+            }
+        }
+        
+        // Handle left case
+        if let leftHexagon = currentRow.last?.hexagon {
+            adjacentHexagons.append(leftHexagon)
+        }
+        return adjacentHexagons
     }
 }

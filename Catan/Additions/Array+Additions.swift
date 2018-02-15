@@ -20,4 +20,20 @@ extension Array {
         }
         return nil
     }
+    
+    init(_ elementConstructor: @autoclosure (Int) -> Element, count: Int) {
+        self.init(count.map({ elementConstructor($0) }))
+    }
+}
+
+extension Dictionary {
+    
+    func combine<E>(withDictionary dict: Dictionary<Key, E>) -> Dictionary<Key, (Value, E)>? {
+        var result: [Key: (Value, E)] = [:]
+        for (key, value) in self {
+            guard let otherValue = dict[key] else { return nil }
+            result[key] = (value, otherValue)
+        }
+        return result
+    }
 }

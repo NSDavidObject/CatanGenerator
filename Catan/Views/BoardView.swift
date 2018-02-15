@@ -12,6 +12,7 @@ class BoardView: UIView {
     
     private var gameBoard: GameBoard? = nil
     private var gameBoardViews: [UIView] = []
+    private var builtBoardOnViewWidth: CGFloat = 0.0
     
     func setup(with gameBoard: GameBoard, showingProbabilityTokens: Bool) {
         self.gameBoard = gameBoard
@@ -21,7 +22,6 @@ class BoardView: UIView {
     
     func toggleProbabilityTokens(on: Bool, animated: Bool) {
         let hexagonsViews: [HexagonView] = gameBoardViews.flatMap({ $0 as? HexagonView })
-        
         func toggleAlphaOfHexagonViews() {
             hexagonsViews.forEach({ hexagonView in
                 hexagonView.diceCombinationTokenView.alpha = on ? 1.0 : 0.0
@@ -46,12 +46,12 @@ class BoardView: UIView {
         
         let numberOfSlotsPerRow = gameBoard.maxNumberOfHexagonsInRow
         let numberOfSlotsToAccountForInRow = numberOfSlotsPerRow.predecessor
-        let viewWidth = UIScreen.main.bounds.width - 30
+        let viewWidth = frame.width
         
         let hexagonWidth = viewWidth / CGFloat(numberOfSlotsToAccountForInRow)
         let hexagonHeight = hexagonWidth * 70/61
         let hexagonSize = CGSize(width: hexagonWidth, height: hexagonHeight)
-
+        
         var originY: CGFloat = 0.0
         for row in gameBoard.pieces {
             let numberOfSlotsInRow = row.count
@@ -67,6 +67,15 @@ class BoardView: UIView {
             }
             originY += hexagonHeight * 0.75 + 0.5
         }
+        
+        builtBoardOnViewWidth = viewWidth
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard gameBoardViews.count == 0 || (builtBoardOnViewWidth != frame.width) else { return }
+        buildBoard()
     }
     
     private func view(forPiece piece: GameBoardPiece) -> UIView {
@@ -75,6 +84,10 @@ class BoardView: UIView {
             let hexagonView: HexagonView = HexagonView()
             hexagonView.hexagon = hexagon
             return hexagonView
+        case .water(let water):
+            let waterView: WaterView = WaterView()
+            waterView.water = water
+            return waterView
         case .port(let port, location: let location):
             let portContainerView = PortContainerView()
             portContainerView.portView.port = port

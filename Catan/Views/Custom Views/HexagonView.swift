@@ -8,44 +8,6 @@
 
 import UIKit
 
-class WaterView: UIView {
-    
-    var water: GameBoardPiece.Water? {
-        didSet { didUpdateWater() }
-    }
-    
-    let imageView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "hexagon-knight"))
-    let portContainerView: PortContainerView = PortContainerView()
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        imageView.image = #imageLiteral(resourceName: "hexagon-water")
-        imageView.alpha = 0.2
-        imageView.frame = bounds
-        imageView.contentMode = .scaleAspectFill
-        imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(imageView)
-        
-        portContainerView.frame = bounds
-        portContainerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(portContainerView)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func didUpdateWater() {
-        guard let water = water else { return }
-        
-        portContainerView.isHidden = (water.port == nil)
-        guard let portInfo = water.port else { return }
-        
-        portContainerView.portView.port = portInfo.0
-        portContainerView.location = portInfo.location
-    }
-}
-
 class HexagonView: UIView {
     
     var hexagon: GameBoardPiece.Hexagon? {
@@ -54,6 +16,8 @@ class HexagonView: UIView {
     
     let diceCombinationTokenView: DiceCombinationTokenView = DiceCombinationTokenView()
     let imageView: UIImageView = UIImageView()
+    
+    private(set) var isDiceCombinationHidden: Bool = false
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -76,10 +40,21 @@ class HexagonView: UIView {
         diceCombinationTokenView.frame = CGRect(x: (bounds.width - tokenViewWidth) / 2, y: (bounds.height - tokenViewWidth) / 2, width: tokenViewWidth, height: tokenViewWidth)
     }
     
+    func toggleDiceCombinationVisibility(toVisible visible: Bool) {
+        guard isDiceCombinationHidden == visible else { return }
+        
+        isDiceCombinationHidden = !visible
+        changeDiceCombinationAlpha()
+    }
+    
+    func changeDiceCombinationAlpha() {
+        diceCombinationTokenView.alpha = isDiceCombinationHidden ? 0.0 : 1.0
+    }
+    
     func didUpdateHexagon() {
         guard let hexagon = hexagon else { return }
-        imageView.image = hexagon.image
         
+        imageView.image = hexagon.image
         if case .resource(_, let diceCombination) = hexagon {
             diceCombinationTokenView.diceCombination = diceCombination
         }
@@ -91,6 +66,7 @@ extension GameBoardPiece.Hexagon {
     var image: UIImage {
         switch self {
         case .theif: return #imageLiteral(resourceName: "hexagon-knight")
+        case .water: return #imageLiteral(resourceName: "hexagon-water")
         case .resource(let resource, value: _):
             switch resource {
             case .clay: return #imageLiteral(resourceName: "hexagon-clay")

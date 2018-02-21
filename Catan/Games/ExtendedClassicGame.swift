@@ -15,7 +15,7 @@ struct ExtendedClassicGame: GameDefinition {
         GameBoardDistributionAdjacentHighProbabilityRule.self
     ]
     
-    static let portsList: [(port: Port, count: Int)] = [
+    static let portsList: [Ports] = [
         (port: .wild, count: 5),
         (port: .resource(.hay), count: 1),
         (port: .resource(.clay), count: 1),
@@ -25,6 +25,8 @@ struct ExtendedClassicGame: GameDefinition {
     ]
     
     static var theifsCount: [LocationType: Int] = [.normal: 2]
+    static var watersCount: [LocationType: Int] = [.normal: 0]
+    
     static let resources: [LocationType : [GameDefinition.Resources]] = [
         .normal: [
             (resource: .hay, count: 6),

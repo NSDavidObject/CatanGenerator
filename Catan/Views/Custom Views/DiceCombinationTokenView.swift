@@ -13,7 +13,7 @@ class DiceCombinationTokenView: UIView {
     var diceCombination: DiceCombination? {
         didSet { didUpdateDiceCombination() }
     }
-    
+
     let imageView: UIImageView = UIImageView()
     override init(frame: CGRect) {
         super.init(frame: frame)

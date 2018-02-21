@@ -29,6 +29,8 @@ extension Array {
 extension Dictionary {
     
     func combine<E>(withDictionary dict: Dictionary<Key, E>) -> Dictionary<Key, (Value, E)>? {
+        guard dict.keys.allPass({ self.keys.contains($0) }) else { return nil }
+        
         var result: [Key: (Value, E)] = [:]
         for (key, value) in self {
             guard let otherValue = dict[key] else { return nil }

@@ -27,3 +27,17 @@ enum Resource: Int, Equatable {
         }
     }
 }
+
+extension Resource: CustomDebugStringConvertible {
+    
+    var debugDescription: String {
+        switch self {
+        case .hay: return "hay"
+        case .clay: return "clay"
+        case .stone: return "stone"
+        case .sheep: return "sheep"
+        case .wood: return "wood"
+        case .gold: return "gold"
+        }
+    }
+}

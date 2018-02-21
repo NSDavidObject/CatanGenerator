@@ -24,6 +24,7 @@ enum GameBoardPiece {
     
     enum Hexagon {
         case theif
+        case water
         case resource(Resource, value: DiceCombination)
         
         var diceCombination: DiceCombination? {
@@ -50,6 +51,7 @@ enum GameBoardPiece {
     
     var hexagon: Hexagon? {
         switch self {
+        case .fog(let hexagon): return hexagon
         case .hexagon(let hexagon): return hexagon
         default: return nil
         }
@@ -64,8 +66,9 @@ enum GameBoardPiece {
     }
     
     case empty
-    case hexagon(Hexagon)
+    case fog(Hexagon)
     case water(Water)
+    case hexagon(Hexagon)
     case port(Port, location: Port.Location)
 }
 

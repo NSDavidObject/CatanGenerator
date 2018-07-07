@@ -69,7 +69,7 @@ struct ExtendedClassicGame: GameDefinition {
             .empty, .hexagon, .hexagon, .hexagon, .hexagon, .hexagon, .hexagon, .port(location: .left)
         ],
         [
-            .port(location: .right), .hexagon, .hexagon, .hexagon, .hexagon, .hexagon, .empty
+            .port(location: .topRight), .hexagon, .hexagon, .hexagon, .hexagon, .hexagon, .empty
         ],
         [
             .port(location: .right), .hexagon, .hexagon, .hexagon, .hexagon, .port(location: .topLeft)

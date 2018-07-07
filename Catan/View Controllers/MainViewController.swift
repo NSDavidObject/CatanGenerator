@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CommonUtilities
 
 private struct Constants {
     static let generateButtonFont: UIFont = FontType.light(.small).font
@@ -51,11 +52,13 @@ class MainViewController: UIViewController {
         generateButton.setTitleColor(UIColor.appColorMainViewControllerGenerateButton, for: .normal)
         generateButton.titleLabel?.font = Constants.generateButtonFont
 
+        shareButton.image
         shareButton.layer.borderWidth = 1.0
         shareButton.layer.borderColor = UIColor.appColorMainColor.cgColor
         shareButton.clickSound = .click
         shareButton.feedbackType = .selection
         shareButton.proportionalCornerRadius = .circular
+        shareButton.setImage(image: #imageLiteral(resourceName: "share-button-icon"), withColor: UIColor.appColorMainColor)
         shareButton.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
 
         gameTypeToggleButton.clickSound = .toggle
@@ -91,8 +94,9 @@ class MainViewController: UIViewController {
 
     @objc func didTapShareButton() {
       guard let gameBoard = boardView.gameBoard else { return }
-      ShareImageView.shareImage(for: gameBoard) { image in
-        print(image)
+      ShareImageView.shareImage(for: gameBoard) { [weak self] image in
+        guard let strongSelf = self else { return }
+        strongSelf.showActivityViewController(forImage: image, sourceView: strongSelf.shareButton, completion: nil)
       }
     }
 
@@ -122,3 +126,17 @@ class MainViewController: UIViewController {
     }
 }
 
+extension MainViewController {
+
+  private func showActivityViewController(forImage image: UIImage, shareText: String? = nil, sourceView: UIView?, completion: Completion?) {
+    let imageData = UIImagePNGRepresentation(image).requiredlyWrapped
+    let activityItems: [Any] = [imageData, shareText as Any?].compactMap({ $0 })
+    let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+    activityViewController.popoverPresentationController?.sourceView = sourceView
+    activityViewController.excludedActivityTypes = [.airDrop, .print, .assignToContact, .addToReadingList, .postToVimeo, .postToFlickr, .openInIBooks]
+    activityViewController.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) in
+      completion?()
+    }
+    self.present(activityViewController, animated: true, completion: nil)
+  }
+}

@@ -38,6 +38,10 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Granting Catanous access, allows us to save your generated board image to camera roll 😉</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Granting Catanous access, allows us to save your generated board image to camera roll 😉</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>coresansar15.otf</string>

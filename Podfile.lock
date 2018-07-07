@@ -1,0 +1,37 @@
+PODS:
+  - CommonUtilities (1.0.0):
+    - SnapKit
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - Fabric (1.7.7)
+  - SnapKit (4.0.0)
+  - SwiftLint (0.25.1)
+
+DEPENDENCIES:
+  - CommonUtilities (from `../CommonUtilities/`)
+  - Crashlytics
+  - Fabric
+  - SnapKit
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+    - SnapKit
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  CommonUtilities:
+    :path: "../CommonUtilities/"
+
+SPEC CHECKSUMS:
+  CommonUtilities: fa5cc2c6a26109fe445cb83443d0c1efb0fd7e16
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+
+PODFILE CHECKSUM: 031786f0f3b877109c31ea1d3fca99ac6a4d7552
+
+COCOAPODS: 1.5.3

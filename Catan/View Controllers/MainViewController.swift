@@ -19,9 +19,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var boardView: BoardView!
+    @IBOutlet weak var shareButton: TransformableButton!
     @IBOutlet weak var generateButton: TransformableButton!
     @IBOutlet weak var gameTypeToggleButton: TransformableButton!
-    
+
     var gameType: GameType = MostRecentlyUsedGameTypePersistedSetting.value {
         didSet { didUpdateCurrentGameType() }
     }
@@ -49,7 +50,14 @@ class MainViewController: UIViewController {
         generateButton.setTitle("Generate", for: .normal)
         generateButton.setTitleColor(UIColor.appColorMainViewControllerGenerateButton, for: .normal)
         generateButton.titleLabel?.font = Constants.generateButtonFont
-        
+
+        shareButton.layer.borderWidth = 1.0
+        shareButton.layer.borderColor = UIColor.appColorMainColor.cgColor
+        shareButton.clickSound = .click
+        shareButton.feedbackType = .selection
+        shareButton.proportionalCornerRadius = .circular
+        shareButton.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
+
         gameTypeToggleButton.clickSound = .toggle
         gameTypeToggleButton.feedbackType = .success
         gameTypeToggleButton.titleLabel?.font = Constants.gameTypeTitleLabelFont
@@ -80,7 +88,14 @@ class MainViewController: UIViewController {
         boardView.toggleProbabilityTokens(on: areProbabilityTokensEnabled, animated: true)
         FeedbackGenerator.generate(of: .selection)
     }
-    
+
+    @objc func didTapShareButton() {
+      guard let gameBoard = boardView.gameBoard else { return }
+      ShareImageView.shareImage(for: gameBoard) { image in
+        print(image)
+      }
+    }
+
     func didUpdateCurrentGameType() {
         generateGameBoard()
         MostRecentlyUsedGameTypePersistedSetting.set(value: gameType)

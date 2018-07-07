@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CommonUtilities
 
 class BoardView: UIView {
     
-    private var gameBoard: GameBoard? = nil
+    private(set) var gameBoard: GameBoard? = nil
     private var gameBoardViews: [UIView] = []
     
     func setup(with gameBoard: GameBoard, showingProbabilityTokens: Bool) {
@@ -20,8 +21,8 @@ class BoardView: UIView {
     }
     
     func toggleProbabilityTokens(on: Bool, animated: Bool) {
-        let hexagonsViews: [HexagonView] = gameBoardViews.flatMap({ $0 as? HexagonView })
-        
+        let hexagonsViews: [HexagonView] = gameBoardViews.filter(ofClass: HexagonView.self)
+
         func toggleAlphaOfHexagonViews() {
             hexagonsViews.forEach({ hexagonView in
                 hexagonView.diceCombinationTokenView.alpha = on ? 1.0 : 0.0

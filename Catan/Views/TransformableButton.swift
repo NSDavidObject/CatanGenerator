@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransformableButton: Button {
+class TransformableButton: CatanButton {
     
     var shouldTransformOnClick = true
     override var isHighlighted: Bool {

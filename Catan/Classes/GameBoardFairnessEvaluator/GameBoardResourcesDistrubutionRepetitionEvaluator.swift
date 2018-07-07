@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CommonUtilities
 
 private extension GameType {
     

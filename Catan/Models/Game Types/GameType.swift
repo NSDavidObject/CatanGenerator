@@ -9,6 +9,8 @@
 import Foundation
 
 enum GameType {
+    static let isSeafarersAvailable: Bool = false
+
     case classic
     case extendedClassic
     case seafarers(scenario: SeafarersScenario)
@@ -58,6 +60,8 @@ extension GameType {
     }
     
     static func gameType(forRawValue rawValue: Int) -> GameType? {
+        guard isSeafarersAvailable || rawValue < 2 else { return nil }
+      
         switch rawValue {
         case 0: return .classic
         case 1: return .extendedClassic

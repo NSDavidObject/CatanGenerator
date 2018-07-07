@@ -53,7 +53,7 @@ class BoardView: UIView {
             }.count == 1
         
         let numberOfSlotsToAccountForInRow: CGFloat = areAllRowsOfSameSize ? (numberOfSlotsPerRow + 0.5) : numberOfSlotsPerRow
-        let hexagonWidth = viewWidth / numberOfSlotsToAccountForInRow
+        let hexagonWidth = viewWidth / numberOfSlotsToAccountForInRow.predecessor
         let hexagonHeight = hexagonWidth * 70/61
         let hexagonSize = CGSize(width: hexagonWidth, height: hexagonHeight)
         let saparator = (1/UIScreen.main.scale)
@@ -62,7 +62,7 @@ class BoardView: UIView {
         for (rowNumber, row) in gameBoard.pieces.enumerated() {
             let numberOfSlotsInRow = CGFloat(row.count)
             let numberOfSlotsLessThanMax = numberOfSlotsToAccountForInRow - numberOfSlotsInRow
-            var originX: CGFloat = 0.0
+            var originX: CGFloat = -hexagonWidth.half
 
             if !areAllRowsOfSameSize {
                 originX += ((numberOfSlotsLessThanMax * hexagonWidth) + (numberOfSlotsLessThanMax - 1) * 0.5) / 2

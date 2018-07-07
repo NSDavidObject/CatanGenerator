@@ -15,18 +15,18 @@
             <rect key="frame" x="0.0" y="0.0" width="360" height="468"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7o-ly-F8S">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share-background-image" translatesAutoresizingMaskIntoConstraints="NO" id="v7o-ly-F8S">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="468"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mUI-9z-KFP">
                     <rect key="frame" x="35" y="35" width="290" height="398"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvg-4D-wLy" customClass="BoardView" customModule="Catan" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="290" height="377.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="357"/>
                             <color key="backgroundColor" red="0.15124589139170164" green="0.82770778277201007" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYj-1s-DEL">
-                            <rect key="frame" x="0.0" y="377.5" width="290" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Catanous Catan Generator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYj-1s-DEL">
+                            <rect key="frame" x="0.0" y="357" width="290" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -56,4 +56,7 @@
             <point key="canvasLocation" x="-765" y="-53"/>
         </view>
     </objects>
+    <resources>
+        <image name="share-background-image" width="360" height="468"/>
+    </resources>
 </document>

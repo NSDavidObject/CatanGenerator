@@ -9,6 +9,10 @@
 import UIKit
 import CommonUtilities
 
+private struct Constants {
+  static let shareTitleLabelFont: UIFont = FontType.light(.small).font
+}
+
 class ShareImageView: View {
 
   @IBOutlet var titleLabel: UILabel!
@@ -19,9 +23,13 @@ class ShareImageView: View {
   override func awakeFromNib() {
     super.awakeFromNib()
 
+    titleLabel.text = "Catanous\nCatan Generator"
     titleLabel.numberOfLines = 2
     titleLabel.textAlignment = .center
-    titleLabel.text = "Catanous\nCatan Generator"
+    titleLabel.font = Constants.shareTitleLabelFont
+    titleLabel.textColor = UIColor.appColorBrown
+
+    boardView.backgroundColor = .clear
 
     proportionalCornerRadius = .constant(20.0)
   }
@@ -37,6 +45,7 @@ extension ShareImageView {
 
     let shareImageView: ShareImageView = ShareImageView.instanceFromNib()
     shareImageView.setup(withGameBoard: gameBoard)
+    shareImageView.layoutIfNeeded()
 
 //    DispatchQueue.global().async {
       let screenshot = shareImageView.screenshot()

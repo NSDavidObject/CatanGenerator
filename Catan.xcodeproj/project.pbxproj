@@ -10,12 +10,15 @@
 		0C9C2E2D20F09CD4001F070F /* ShareImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C2E2C20F09CD4001F070F /* ShareImageView.swift */; };
 		0C9C2E3020F0A6AC001F070F /* ShareImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C9C2E2F20F0A6AB001F070F /* ShareImageView.xib */; };
 		12BE8227F5B88B431EF34E97 /* Pods_CatanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2E19C09F0129A980488EDC /* Pods_CatanTests.framework */; };
+		5507966020355FB5002D4893 /* SeafarersExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507965F20355FB5002D4893 /* SeafarersExpansion.swift */; };
+		5507966220356094002D4893 /* HeadingForTheShores3PlayersGameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507966120356093002D4893 /* HeadingForTheShores3PlayersGameDefinition.swift */; };
 		5513AE331F4A06FB00D320D2 /* ClassicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5513AE321F4A06FB00D320D2 /* ClassicGame.swift */; };
 		551960E91F533D9200EDAEF7 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551960E81F533CE400EDAEF7 /* UIColor+AppColors.swift */; };
 		551960EA1F533D9600EDAEF7 /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551960E71F533CB700EDAEF7 /* UIFont+AppFonts.swift */; };
 		551960EB1F533DA700EDAEF7 /* coresansar15.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E31F533C3600EDAEF7 /* coresansar15.otf */; };
 		551960EC1F533DA700EDAEF7 /* coresansar25.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E41F533C3600EDAEF7 /* coresansar25.otf */; };
 		551960ED1F533DA700EDAEF7 /* coresansar35.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551960E51F533C3600EDAEF7 /* coresansar35.otf */; };
+		55198F3B203D0B5000C1ABDD /* TheFogIslands3PlayersGameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55198F3A203D0B5000C1ABDD /* TheFogIslands3PlayersGameDefinition.swift */; };
 		55202E1F1F532EBB006291E4 /* ExtendedClassicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */; };
 		5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521E11E1F6A2772006A6644 /* TransformableButton.swift */; };
 		5521E1211F6A27B2006A6644 /* CatanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5521E1201F6A27B2006A6644 /* CatanButton.swift */; };
@@ -29,6 +32,11 @@
 		553545151F4FDDF700D21E65 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545141F4FDDF700D21E65 /* Port.swift */; };
 		553545171F4FDE1000D21E65 /* GameBoardPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553545161F4FDE1000D21E65 /* GameBoardPiece.swift */; };
 		553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553BBB181F4E20FF00DFFA2A /* BoardView.swift */; };
+		554AF09B203DAFFD005013F7 /* TheFogIslands4PlayersGameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554AF09A203DAFFD005013F7 /* TheFogIslands4PlayersGameDefinition.swift */; };
+		554AF09E203DB377005013F7 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554AF09D203DB377005013F7 /* WaterView.swift */; };
+		554AF0A0203DB399005013F7 /* FogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554AF09F203DB399005013F7 /* FogView.swift */; };
+		554AF0A2203DC1C2005013F7 /* HeadingForTheFogyShores4PlayersGameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554AF0A1203DC1C2005013F7 /* HeadingForTheFogyShores4PlayersGameDefinition.swift */; };
+		554AF0A4203DC3A5005013F7 /* HeadingForTheFogyShores3PlayersGameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554AF0A3203DC3A5005013F7 /* HeadingForTheFogyShores3PlayersGameDefinition.swift */; };
 		5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555F2191F533F4700EC2CFE /* GameType.swift */; };
 		55597EA61F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EA51F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift */; };
 		55597EA91F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EA81F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift */; };
@@ -41,6 +49,7 @@
 		55597EC41F803E140062C4C6 /* DefaultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC31F803E140062C4C6 /* DefaultsItem.swift */; };
 		55597EC81F803EE30062C4C6 /* DefaultsGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */; };
 		55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */; };
+		5564962E202FC5E6005A50E2 /* HeadingForTheShores4PlayersGameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5564962D202FC5E6005A50E2 /* HeadingForTheShores4PlayersGameDefinition.swift */; };
 		5565FEC11FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565FEC01FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift */; };
 		55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D371F493C0E0005B93F /* AppDelegate.swift */; };
 		55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B01D391F493C0E0005B93F /* MainViewController.swift */; };
@@ -78,12 +87,15 @@
 		0C9C2E2F20F0A6AB001F070F /* ShareImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareImageView.xib; sourceTree = "<group>"; };
 		3829EB48B2248605397471F8 /* Pods-CatanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatanTests/Pods-CatanTests.release.xcconfig"; sourceTree = "<group>"; };
 		3EEEACBF515633781CBF5340 /* Pods_Catan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5507965F20355FB5002D4893 /* SeafarersExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeafarersExpansion.swift; sourceTree = "<group>"; };
+		5507966120356093002D4893 /* HeadingForTheShores3PlayersGameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadingForTheShores3PlayersGameDefinition.swift; sourceTree = "<group>"; };
 		5513AE321F4A06FB00D320D2 /* ClassicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicGame.swift; sourceTree = "<group>"; };
 		551960E31F533C3600EDAEF7 /* coresansar15.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coresansar15.otf; sourceTree = "<group>"; };
 		551960E41F533C3600EDAEF7 /* coresansar25.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coresansar25.otf; sourceTree = "<group>"; };
 		551960E51F533C3600EDAEF7 /* coresansar35.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = coresansar35.otf; sourceTree = "<group>"; };
 		551960E71F533CB700EDAEF7 /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		551960E81F533CE400EDAEF7 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		55198F3A203D0B5000C1ABDD /* TheFogIslands3PlayersGameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheFogIslands3PlayersGameDefinition.swift; sourceTree = "<group>"; };
 		55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedClassicGame.swift; sourceTree = "<group>"; };
 		5521E11E1F6A2772006A6644 /* TransformableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformableButton.swift; sourceTree = "<group>"; };
 		5521E1201F6A27B2006A6644 /* CatanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatanButton.swift; sourceTree = "<group>"; };
@@ -97,6 +109,11 @@
 		553545141F4FDDF700D21E65 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		553545161F4FDE1000D21E65 /* GameBoardPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardPiece.swift; sourceTree = "<group>"; };
 		553BBB181F4E20FF00DFFA2A /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		554AF09A203DAFFD005013F7 /* TheFogIslands4PlayersGameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheFogIslands4PlayersGameDefinition.swift; sourceTree = "<group>"; };
+		554AF09D203DB377005013F7 /* WaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
+		554AF09F203DB399005013F7 /* FogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogView.swift; sourceTree = "<group>"; };
+		554AF0A1203DC1C2005013F7 /* HeadingForTheFogyShores4PlayersGameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadingForTheFogyShores4PlayersGameDefinition.swift; sourceTree = "<group>"; };
+		554AF0A3203DC3A5005013F7 /* HeadingForTheFogyShores3PlayersGameDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadingForTheFogyShores3PlayersGameDefinition.swift; sourceTree = "<group>"; };
 		5555F2191F533F4700EC2CFE /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		55597EA51F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameBoardFairnessEvaluator.swift; path = Catan/Classes/GameBoardFairnessEvaluator/GameBoardFairnessEvaluator.swift; sourceTree = SOURCE_ROOT; };
 		55597EA81F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardProbabilityDistributionFairnessEvaluator.swift; sourceTree = "<group>"; };
@@ -110,6 +127,7 @@
 		55597EC31F803E140062C4C6 /* DefaultsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsItem.swift; sourceTree = "<group>"; };
 		55597EC71F803EE30062C4C6 /* DefaultsGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsGameType.swift; sourceTree = "<group>"; };
 		55597ECA1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentlyUsedGameTypePersistedSetting.swift; sourceTree = "<group>"; };
+		5564962D202FC5E6005A50E2 /* HeadingForTheShores4PlayersGameDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingForTheShores4PlayersGameDefinition.swift; sourceTree = "<group>"; };
 		5565FEC01FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardResourcesDistrubutionRepetitionEvaluator.swift; sourceTree = "<group>"; };
 		55B01D341F493C0E0005B93F /* Catan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B01D371F493C0E0005B93F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,11 +182,34 @@
 			path = ShareImageView;
 			sourceTree = "<group>";
 		};
+		5507965D20355BEE002D4893 /* Seafarers */ = {
+			isa = PBXGroup;
+			children = (
+				5507966120356093002D4893 /* HeadingForTheShores3PlayersGameDefinition.swift */,
+				5564962D202FC5E6005A50E2 /* HeadingForTheShores4PlayersGameDefinition.swift */,
+				554AF0A3203DC3A5005013F7 /* HeadingForTheFogyShores3PlayersGameDefinition.swift */,
+				554AF0A1203DC1C2005013F7 /* HeadingForTheFogyShores4PlayersGameDefinition.swift */,
+				55198F3A203D0B5000C1ABDD /* TheFogIslands3PlayersGameDefinition.swift */,
+				554AF09A203DAFFD005013F7 /* TheFogIslands4PlayersGameDefinition.swift */,
+			);
+			path = Seafarers;
+			sourceTree = "<group>";
+		};
+		5507965E20355FA2002D4893 /* Game Types */ = {
+			isa = PBXGroup;
+			children = (
+				5555F2191F533F4700EC2CFE /* GameType.swift */,
+				5507965F20355FB5002D4893 /* SeafarersExpansion.swift */,
+			);
+			path = "Game Types";
+			sourceTree = "<group>";
+		};
 		5513AE311F4A06F100D320D2 /* Games */ = {
 			isa = PBXGroup;
 			children = (
 				5513AE321F4A06FB00D320D2 /* ClassicGame.swift */,
 				55202E1E1F532EBB006291E4 /* ExtendedClassicGame.swift */,
+				5507965D20355BEE002D4893 /* Seafarers */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -258,14 +299,24 @@
 			children = (
 				0C9C2E2E20F09D09001F070F /* ShareImageView */,
 				553BBB181F4E20FF00DFFA2A /* BoardView.swift */,
-				553545121F4FD9BF00D21E65 /* DiceCombinationTokenView.swift */,
-				55C003C11F4E2E2B0079372A /* HexagonView.swift */,
+				554AF09C203DB366005013F7 /* Custom Views */,
 				553545101F4FD99900D21E65 /* PortContainerView.swift */,
-				5535450E1F4FD97C00D21E65 /* PortView.swift */,
 				5521E11E1F6A2772006A6644 /* TransformableButton.swift */,
 				5521E1201F6A27B2006A6644 /* CatanButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		554AF09C203DB366005013F7 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				553545121F4FD9BF00D21E65 /* DiceCombinationTokenView.swift */,
+				55C003C11F4E2E2B0079372A /* HexagonView.swift */,
+				5535450E1F4FD97C00D21E65 /* PortView.swift */,
+				554AF09D203DB377005013F7 /* WaterView.swift */,
+				554AF09F203DB399005013F7 /* FogView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		55597EA71F7FFA9A0062C4C6 /* GameBoardFairnessEvaluator */ = {
@@ -346,7 +397,7 @@
 				55B01D4F1F4940200005B93F /* GameBoard.swift */,
 				553545161F4FDE1000D21E65 /* GameBoardPiece.swift */,
 				55B01D511F4945D60005B93F /* GameDefinition.swift */,
-				5555F2191F533F4700EC2CFE /* GameType.swift */,
+				5507965E20355FA2002D4893 /* Game Types */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -605,6 +656,7 @@
 				55202E1F1F532EBB006291E4 /* ExtendedClassicGame.swift in Sources */,
 				5535450F1F4FD97C00D21E65 /* PortView.swift in Sources */,
 				553545111F4FD99900D21E65 /* PortContainerView.swift in Sources */,
+				5507966220356094002D4893 /* HeadingForTheShores3PlayersGameDefinition.swift in Sources */,
 				55C003C21F4E2E2B0079372A /* HexagonView.swift in Sources */,
 				551960E91F533D9200EDAEF7 /* UIColor+AppColors.swift in Sources */,
 				551960EA1F533D9600EDAEF7 /* UIFont+AppFonts.swift in Sources */,
@@ -616,19 +668,26 @@
 				5555F21A1F533F4700EC2CFE /* GameType.swift in Sources */,
 				553545151F4FDDF700D21E65 /* Port.swift in Sources */,
 				5565FEC11FDB7E41004959F8 /* GameBoardResourcesDistrubutionRepetitionEvaluator.swift in Sources */,
+				554AF0A0203DB399005013F7 /* FogView.swift in Sources */,
 				55D7AD4A2016F94200735441 /* DeviceInfo.swift in Sources */,
 				55597EA91F7FFABA0062C4C6 /* GameBoardProbabilityDistributionFairnessEvaluator.swift in Sources */,
+				5564962E202FC5E6005A50E2 /* HeadingForTheShores4PlayersGameDefinition.swift in Sources */,
+				554AF09B203DAFFD005013F7 /* TheFogIslands4PlayersGameDefinition.swift in Sources */,
 				5521E1231F6A282D006A6644 /* ProportionalCornerRadius.swift in Sources */,
 				55597ECB1F8041F90062C4C6 /* MostRecentlyUsedGameTypePersistedSetting.swift in Sources */,
 				55B774051F6E02E5001F58BC /* FeedbackGenerator.swift in Sources */,
 				55597EA61F7FFA080062C4C6 /* GameBoardFairnessEvaluator.swift in Sources */,
 				55ED5DC31FFB0B180053429B /* GameBoardDistributionRule.swift in Sources */,
 				55597EC41F803E140062C4C6 /* DefaultsItem.swift in Sources */,
+				55198F3B203D0B5000C1ABDD /* TheFogIslands3PlayersGameDefinition.swift in Sources */,
+				554AF0A2203DC1C2005013F7 /* HeadingForTheFogyShores4PlayersGameDefinition.swift in Sources */,
 				5521E11F1F6A2772006A6644 /* TransformableButton.swift in Sources */,
+				554AF0A4203DC3A5005013F7 /* HeadingForTheFogyShores3PlayersGameDefinition.swift in Sources */,
 				55ED5DC51FFB0B390053429B /* GameBoardDistributionAdjacentResourcesRule.swift in Sources */,
 				55B01D3A1F493C0E0005B93F /* MainViewController.swift in Sources */,
 				553BBB191F4E20FF00DFFA2A /* BoardView.swift in Sources */,
 				55ED5DC71FFB0B4F0053429B /* GameBoardDistributionAdjacentHighProbabilityRule.swift in Sources */,
+				5507966020355FB5002D4893 /* SeafarersExpansion.swift in Sources */,
 				55E106B71F8933E40016BDBE /* GameBoardResourceGroupingFairnessEvaluator.swift in Sources */,
 				55B01D381F493C0E0005B93F /* AppDelegate.swift in Sources */,
 				55597EC81F803EE30062C4C6 /* DefaultsGameType.swift in Sources */,
@@ -637,6 +696,7 @@
 				55D7AD482016F8E500735441 /* FontType.swift in Sources */,
 				5521E1211F6A27B2006A6644 /* CatanButton.swift in Sources */,
 				55597EAD1F800C730062C4C6 /* DoubleArrayPosition.swift in Sources */,
+				554AF09E203DB377005013F7 /* WaterView.swift in Sources */,
 				55597EC21F80226B0062C4C6 /* GameBoardResourcesDistrubutionFairnessEvaluator.swift in Sources */,
 				0C9C2E2D20F09CD4001F070F /* ShareImageView.swift in Sources */,
 				55597EAB1F8004350062C4C6 /* GameBoardFactory.swift in Sources */,

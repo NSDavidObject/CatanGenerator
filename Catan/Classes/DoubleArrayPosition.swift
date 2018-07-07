@@ -86,7 +86,6 @@ extension DoubleArrayPosition {
     
     private func position(toRowCount: Int, toLeft: Bool, toNextRow: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
         let fromRowCount = gameBoard.pieces[positionY].count
-        
         let positionX: Int
         if toLeft {
             positionX = self.positionX - Int(fromRowCount >= toRowCount)
@@ -98,13 +97,36 @@ extension DoubleArrayPosition {
         return DoubleArrayPosition(positionX: positionX, positionY: adjustedPositionY)
     }
     
+    private func positionInSameSizeRows(atEvenRow: Bool, toLeft: Bool, toNextRow: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition {
+        let positionX: Int
+        switch (toLeft, atEvenRow) {
+        case (true, true):
+            positionX = self.positionX - 1
+        case (false, true), (true, false):
+            positionX = self.positionX
+        case (false, false):
+            positionX = self.positionX + 1
+        }
+        let adjustedPositionY = toNextRow ? positionY.successor : positionY.predecessor
+        return DoubleArrayPosition(positionX: positionX, positionY: adjustedPositionY)
+    }
+    
     private func positionInNextRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition? {
         guard let toRowCount = gameBoard.pieces[safe: positionY.successor]?.count else { return nil }
-        return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: true, inGameBoard: gameBoard)
+        if toRowCount == gameBoard.pieces[positionY].count {
+            return positionInSameSizeRows(atEvenRow: (positionY % 2 == 0), toLeft: toLeft, toNextRow: true, inGameBoard: gameBoard)
+        } else {
+            return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: true, inGameBoard: gameBoard)
+        }
     }
     
     private func positionInPreviousRow(toLeft: Bool, inGameBoard gameBoard: GameBoard) -> DoubleArrayPosition? {
         guard let toRowCount = gameBoard.pieces[safe: positionY.predecessor]?.count else { return nil }
-        return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: false, inGameBoard: gameBoard)
+        
+        if toRowCount == gameBoard.pieces[positionY].count {
+            return positionInSameSizeRows(atEvenRow: (positionY % 2 == 0), toLeft: toLeft, toNextRow: false, inGameBoard: gameBoard)
+        } else {
+            return position(toRowCount: toRowCount, toLeft: toLeft, toNextRow: false, inGameBoard: gameBoard)
+        }
     }
 }

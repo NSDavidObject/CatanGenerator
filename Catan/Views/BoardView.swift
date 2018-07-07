@@ -13,6 +13,7 @@ class BoardView: UIView {
     
     private(set) var gameBoard: GameBoard? = nil
     private var gameBoardViews: [UIView] = []
+    private var builtBoardOnViewWidth: CGFloat = 0.0
     
     func setup(with gameBoard: GameBoard, showingProbabilityTokens: Bool) {
         self.gameBoard = gameBoard
@@ -22,11 +23,8 @@ class BoardView: UIView {
     
     func toggleProbabilityTokens(on: Bool, animated: Bool) {
         let hexagonsViews: [HexagonView] = gameBoardViews.filter(ofClass: HexagonView.self)
-
         func toggleAlphaOfHexagonViews() {
-            hexagonsViews.forEach({ hexagonView in
-                hexagonView.diceCombinationTokenView.alpha = on ? 1.0 : 0.0
-            })
+            hexagonsViews.forEach({ $0.toggleDiceCombinationVisibility(toVisible: on) })
         }
         
         if animated {
@@ -38,36 +36,59 @@ class BoardView: UIView {
         }
     }
     
-    private func buildBoard() {
+    private func buildBoard() {        
         guard let gameBoard = gameBoard else { return }
         
         // Reset old views
         gameBoardViews.forEach({ $0.removeFromSuperview() })
         gameBoardViews.removeAll()
         
-        let numberOfSlotsPerRow = gameBoard.maxNumberOfHexagonsInRow
-        let numberOfSlotsToAccountForInRow = numberOfSlotsPerRow.predecessor
-        let viewWidth = UIScreen.main.bounds.width - 30
+        let viewWidth = frame.width
+        let numberOfSlotsPerRow: CGFloat = CGFloat(gameBoard.maxNumberOfHexagonsInRow)
         
-        let hexagonWidth = viewWidth / CGFloat(numberOfSlotsToAccountForInRow)
+        let areAllRowsOfSameSize = gameBoard.pieces.reduce(Set<Int>()) { (result, pieces) -> Set<Int> in
+            var res = result
+            res.insert(pieces.count)
+            return res
+            }.count == 1
+        
+        let numberOfSlotsToAccountForInRow: CGFloat = areAllRowsOfSameSize ? (numberOfSlotsPerRow + 0.5) : numberOfSlotsPerRow
+        let hexagonWidth = viewWidth / numberOfSlotsToAccountForInRow
         let hexagonHeight = hexagonWidth * 70/61
         let hexagonSize = CGSize(width: hexagonWidth, height: hexagonHeight)
-
+        let saparator = (1/UIScreen.main.scale)
+        
         var originY: CGFloat = 0.0
-        for row in gameBoard.pieces {
-            let numberOfSlotsInRow = row.count
-            let numberOfSlotsLessThanMax = CGFloat(numberOfSlotsToAccountForInRow - numberOfSlotsInRow)
-            var originX: CGFloat = ((numberOfSlotsLessThanMax * hexagonWidth) + (numberOfSlotsLessThanMax - 1) * 0.5) / 2
+        for (rowNumber, row) in gameBoard.pieces.enumerated() {
+            let numberOfSlotsInRow = CGFloat(row.count)
+            let numberOfSlotsLessThanMax = numberOfSlotsToAccountForInRow - numberOfSlotsInRow
+            var originX: CGFloat = 0.0
+
+            if !areAllRowsOfSameSize {
+                originX += ((numberOfSlotsLessThanMax * hexagonWidth) + (numberOfSlotsLessThanMax - 1) * 0.5) / 2
+            } else {
+                originX += (rowNumber % 2 == 0) ? 0.0 : (hexagonWidth * 0.5)
+            }
+            
             for piece in row {
                 let origin = CGPoint(x: originX, y: originY)
                 let view: UIView = self.view(forPiece: piece)
                 view.frame = CGRect(origin: origin, size: hexagonSize)
                 addSubview(view)
                 gameBoardViews.append(view)
-                originX += hexagonWidth + 0.5
+                originX += hexagonWidth + saparator
             }
-            originY += hexagonHeight * 0.75 + 0.5
+            originY += hexagonHeight * 0.75 + saparator
         }
+        
+        builtBoardOnViewWidth = viewWidth
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard gameBoardViews.count == 0 || (builtBoardOnViewWidth != frame.width) else { return }
+        buildBoard()
     }
     
     private func view(forPiece piece: GameBoardPiece) -> UIView {
@@ -76,6 +97,14 @@ class BoardView: UIView {
             let hexagonView: HexagonView = HexagonView()
             hexagonView.hexagon = hexagon
             return hexagonView
+        case .fog(let hexagon):
+            let fogView: FogView = FogView()
+            fogView.hexagon = hexagon
+            return fogView
+        case .water(let water):
+            let waterView: WaterView = WaterView()
+            waterView.water = water
+            return waterView
         case .port(let port, location: let location):
             let portContainerView = PortContainerView()
             portContainerView.portView.port = port

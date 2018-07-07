@@ -46,6 +46,7 @@ extension Port {
             case .sheep: return #imageLiteral(resourceName: "port-sheep")
             case .stone: return #imageLiteral(resourceName: "port-stone")
             case .wood: return #imageLiteral(resourceName: "port-wood")
+            case .gold: fatalError()
             }
         }
     }

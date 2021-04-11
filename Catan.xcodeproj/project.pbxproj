@@ -296,8 +296,8 @@
 		553BBB171F4E013100DFFA2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				553BBB181F4E20FF00DFFA2A /* BoardView.swift */,
 				554AF09C203DB366005013F7 /* Custom Views */,
+				553BBB181F4E20FF00DFFA2A /* BoardView.swift */,
 				553545101F4FD99900D21E65 /* PortContainerView.swift */,
 				5521E11E1F6A2772006A6644 /* TransformableButton.swift */,
 				5521E1201F6A27B2006A6644 /* Button.swift */,

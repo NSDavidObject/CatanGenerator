@@ -21,7 +21,7 @@ extension Array {
         return nil
     }
     
-    init(_ elementConstructor: @autoclosure (Int) -> Element, count: Int) {
+    init(_ elementConstructor: (Int) -> Element, count: Int) {
         self.init(count.map({ elementConstructor($0) }))
     }
 }

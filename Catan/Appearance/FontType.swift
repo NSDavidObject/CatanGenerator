@@ -30,7 +30,7 @@ enum FontType {
         
         static let pointSizes = FontType.fontSizes
         var pointSize: CGFloat {
-            return FontSize.pointSizes[self.hashValue]
+            return FontSize.pointSizes[rawValue]
         }
     }
     
